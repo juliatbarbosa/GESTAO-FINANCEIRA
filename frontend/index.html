@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-sidebar">
+          <i class="icon">☰</i>
+        </button>
+        <nav class="menu">
+          <ul>
+            <li data-page="dashboard">
+              <a href="#"><i class="icon">📊</i><span>Dashboard</span></a>
+            </li>
+            <li data-page="transactions">
+              <a href="#"><i class="icon">💸</i><span>Transações</span></a>
+            </li>
+            <li data-page="budget">
+              <a href="#"><i class="icon">💰</i><span>Orçamento</span></a>
+            </li>
+            <li data-page="settings">
+              <a href="#"><i class="icon">⚙️</i><span>Configurações</span></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <header class="header">
+          <h1 id="page-title">Dashboard</h1>
+        </header>
+
+        <section id="dashboard" class="page active">
+          <h2>Visão Geral</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Saldo Atual</h3>
+              <p>R$ 5.000,00</p>
+            </div>
+            <div class="card">
+              <h3>Receitas</h3>
+              <p>R$ 2.000,00</p>
+            </div>
+            <div class="card">
+              <h3>Despesas</h3>
+              <p>R$ 1.500,00</p>
+            </div>
+            <div class="card">
+              <h3>Poupança</h3>
+              <p>R$ 1.000,00</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="overview-chart" width="400" height="200"></canvas>
+          </div>
+        </section>
+
+        <section id="transactions" class="page">
+          <h2>Transações</h2>
+          <table class="transactions">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023-10-01</td>
+                <td>Supermercado</td>
+                <td>-R$ 200,00</td>
+              </tr>
+              <tr>
+                <td>2023-10-02</td>
+                <td>Salário</td>
+                <td>+R$ 3.000,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="budget" class="page">
+          <h2>Orçamento</h2>
+          <p>Aqui você pode gerenciar seu orçamento.</p>
+        </section>
+
+        <section id="settings" class="page">
+          <h2>Configurações</h2>
+          <p>Ajuste suas preferências aqui.</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
