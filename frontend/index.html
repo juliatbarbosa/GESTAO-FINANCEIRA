@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,19 +25,23 @@
             <li data-page="budget">
               <a href="#"><i class="icon">💰</i><span>Orçamento</span></a>
             </li>
+            <li data-page="registrations">
+              <a href="#"><i class="icon">📋</i><span>Cadastros</span></a>
+            </li>
+            <li data-page="requests">
+              <a href="#"><i class="icon">📝</i><span>Solicitações</span></a>
+            </li>
             <li data-page="settings">
               <a href="#"><i class="icon">⚙️</i><span>Configurações</span></a>
             </li>
           </ul>
         </nav>
       </aside>
-
       <!-- Main Content -->
       <main class="content">
         <header class="header">
           <h1 id="page-title">Dashboard</h1>
         </header>
-
         <section id="dashboard" class="page active">
           <h2>Visão Geral</h2>
           <div class="card-grid">
@@ -62,7 +66,6 @@
             <canvas id="overview-chart" width="400" height="200"></canvas>
           </div>
         </section>
-
         <section id="transactions" class="page">
           <h2>Transações</h2>
           <table class="transactions">
@@ -87,19 +90,120 @@
             </tbody>
           </table>
         </section>
-
         <section id="budget" class="page">
           <h2>Orçamento</h2>
-          <p>Aqui você pode gerenciar seu orçamento.</p>
+          <div class="crud-container">
+            <button class="add-item-btn">Adicionar Orçamento</button>
+            <table class="crud-table">
+              <thead>
+                <tr>
+                  <th>Categoria</th>
+                  <th>Limite</th>
+                  <th>Gasto</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alimentação</td>
+                  <td>R$ 500,00</td>
+                  <td>R$ 300,00</td>
+                  <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Moradia</td>
+                  <td>R$ 1.000,00</td>
+                  <td>R$ 800,00</td>
+                  <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
-
+        <section id="registrations" class="page">
+          <h2>Cadastros</h2>
+          <div class="crud-container">
+            <button class="add-item-btn">Adicionar Cadastro</button>
+            <table class="crud-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Telefone</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>João Silva</td>
+                  <td>joao@example.com</td>
+                  <td>(11) 99999-9999</td>
+                  <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Maria Souza</td>
+                  <td>maria@example.com</td>
+                  <td>(21) 88888-8888</td>
+                  <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="requests" class="page">
+          <h2>Solicitações</h2>
+          <div class="crud-container">
+            <button class="add-item-btn">Adicionar Solicitação</button>
+            <table class="crud-table">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Status</th>
+                  <th>Data</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Empréstimo</td>
+                  <td>Pendente</td>
+                  <td>2023-10-01</td>
+                  <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cartão de Crédito</td>
+                  <td>Aprovado</td>
+                  <td>2023-10-02</td>
+                  <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
         <section id="settings" class="page">
           <h2>Configurações</h2>
           <p>Ajuste suas preferências aqui.</p>
         </section>
       </main>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
