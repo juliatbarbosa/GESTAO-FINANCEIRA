@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Financeira</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1"></script>
+    <script src="../js/framework/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="menu">
+            <div class="logo">
+                <img src="../img/logo.png" alt="Logo">
+                <h1>FinançasPro</h1>
+            </div>
+            <div class="menu-item">
+                <a href="transacoes.html">
+                    <i class="ph ph-currency-dollar"></i>
+                    <span>
+                        Transações
+                    </span>
+                </a>
+            </div>
+            <div class="menu-item active">
+                <a href="categorias.html">
+                    <i class="ph ph-squares-four"></i>
+                    <span>
+                        Categorias
+                    </span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="tela">
+            <div class="cabecalhoTela">
+                <div class="titulo">
+                    <h1>Categorias</h1>
+                    <span>Gerencie e organize suas categorias.</span>
+                </div>
+                <div class="botoes">
+                    <div class="btnPadrao">
+                        <i class="ph ph-plus"></i>
+                        Nova categoria
+                    </div>
+                </div>
+            </div>
+            <div class="linhaFiltros">
+                <div class="divPesquisa">
+                    <div id="pesquisa">
+                        <input type="text" class="form-control" id="inputPesquisar" placeholder="Pesquisar...">
+                    </div>
+                    <i id="imgPesquisa" class="ph ph-magnifying-glass"></i>
+                </div>
+                <i id="imgFunil" class="ph ph-funnel"></i>
+
+            </div>
+
+            <div class="tabela">
+                <table>
+                    <thead class="cabecalho">
+                        <tr id="cabecalhoCategorias">
+                            <th class="colunaInteiro">
+                                ID
+                            </th>
+                            <th colspan="2">
+                                Descrição
+                            </th>
+                            <th class="colunaInteiro">
+                                Cor
+                            </th>
+                            <th class="colunaIcone"></th>
+                            <th class="colunaIcone"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaCategorias">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/script.js"></script>
+
+    <script src="../js/servidor.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/pages/categorias.js"></script>
+
+</body>
+
+</html>
