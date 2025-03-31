@@ -1,7 +1,7 @@
-const usuarioController = require("./CategoriaController");
+const categoriaRoutes = require("./CategoriaController");
 
 module.exports = (app) => {
-    app.post("/categoria", usuarioController.post);
-    app.put("/categoria/:id", usuarioController.put);
-    app.get("/categoria", usuarioController.get);
+    app.post("/categoria", categoriaRoutes.post);
+    app.put("/categoria/:id", categoriaRoutes.put);
+    app.get("/categoria", categoriaRoutes.get);
 }
