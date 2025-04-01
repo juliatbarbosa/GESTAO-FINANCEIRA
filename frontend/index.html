@@ -3,1337 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinançasPro - Sistema de Gestão Financeira</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <title>Gestão Financeira</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1"></script>
+    <script src="../js/framework/moment.min.js"></script>
   </head>
+
   <body>
-    <div class="app-container">
-      <!-- Sidebar -->
-      <aside class="sidebar" id="sidebar">
-        <button class="toggle-btn" id="toggle-sidebar">
-          <i class="toggle-icon">&#9776;</i>
-        </button>
-        <div class="sidebar-header">
-          <h1 class="sidebar-title">FinançasPro</h1>
+    <div class="content">
+      <div class="menu">
+        <div class="logo">
+          <img src="../img/logo.png" alt="Logo" />
+          <h1>FinançasPro</h1>
         </div>
-        <nav class="sidebar-menu">
-          <ul>
-            <li class="menu-item active" data-page="dashboard">
-              <a href="#"><i class="icon">📊</i><span>Dashboard</span></a>
-            </li>
-            <li class="menu-item" data-page="receitas">
-              <a href="#"><i class="icon">💹</i><span>Receitas</span></a>
-            </li>
-            <li class="menu-item" data-page="despesas">
-              <a href="#"><i class="icon">💸</i><span>Despesas</span></a>
-            </li>
-            <li class="menu-item" data-page="poupanca">
-              <a href="#"><i class="icon">🏦</i><span>Poupança</span></a>
-            </li>
-            <li class="menu-item" data-page="budget">
-              <a href="#"><i class="icon">💰</i><span>Orçamento</span></a>
-            </li>
-            <li class="menu-item" data-page="metas">
-              <a href="#"><i class="icon">🎯</i><span>Metas</span></a>
-            </li>
-            <li class="menu-item" data-page="relatorios">
-              <a href="#"><i class="icon">📝</i><span>Relatórios</span></a>
-            </li>
-            <li class="menu-item" data-page="configuracoes">
-              <a href="#"><i class="icon">⚙️</i><span>Configurações</span></a>
-            </li>
-          </ul>
-        </nav>
-        <div class="user-info">
-          <div class="user-avatar">MC</div>
-          <div class="user-details">
-            <span class="user-name">Meu Controle</span>
-            <span class="user-plan">Versão Pro</span>
+        <div class="menu-item active">
+          <a href="index.html">
+            <i class="ph ph-currency-dollar"></i>
+            <span> Transações </span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="categorias.html">
+            <i class="ph ph-squares-four"></i>
+            <span> Categorias </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tela">
+        <div class="cabecalhoTela">
+          <div class="titulo">
+            <h1>Transações</h1>
+            <span>Gerencie e organize suas transações.</span>
+          </div>
+          <div class="botoes">
+            <div class="btnPadrao" id="btnNovaTransacao">
+              <i class="ph ph-plus"></i>
+              Nova transação
+            </div>
           </div>
         </div>
-      </aside>
 
-      <!-- Main Content -->
-      <main class="content">
-        <header class="content-header">
-          <h1 id="page-title">Dashboard</h1>
-        </header>
-
-        <!-- Dashboard Page -->
-        <section id="dashboard" class="page active">
-          <div class="section-header">
-            <h2>Visão Geral</h2>
-            <div class="filters">
-              <select id="periodo-filter" class="filter-select">
-                <option value="mes">Este Mês</option>
-                <option value="trimestre">Este Trimestre</option>
-                <option value="ano">Este Ano</option>
-                <option value="todos">Todos</option>
-              </select>
+        <div class="linhaCards">
+          <div class="cardFora">
+            <div class="cardCima">
+              Entradas
+              <i class="ph ph-arrow-circle-up up"></i>
             </div>
+
+            <div class="cardBaixo">R$ 1.200,00</div>
           </div>
-
-          <div class="cards-grid">
-            <div class="stat-card card-blue">
-              <div class="card-content">
-                <h3>Saldo Atual</h3>
-                <p class="card-value">R$ 5.000,00</p>
-                <span class="card-trend positive"
-                  >+12% em relação ao mês anterior</span
-                >
-              </div>
-              <div class="card-icon">
-                <i>💼</i>
-              </div>
+          <div class="cardFora">
+            <div class="cardCima">
+              Saídas
+              <i class="ph ph-arrow-circle-down down"></i>
             </div>
 
-            <div class="stat-card card-green">
-              <div class="card-content">
-                <h3>Receitas</h3>
-                <p class="card-value">R$ 2.000,00</p>
-                <span class="card-trend positive"
-                  >+5% em relação ao mês anterior</span
-                >
-              </div>
-              <div class="card-icon">
-                <i>📈</i>
-              </div>
-            </div>
-
-            <div class="stat-card card-red">
-              <div class="card-content">
-                <h3>Despesas</h3>
-                <p class="card-value">R$ 1.500,00</p>
-                <span class="card-trend negative"
-                  >+8% em relação ao mês anterior</span
-                >
-              </div>
-              <div class="card-icon">
-                <i>📉</i>
-              </div>
-            </div>
-
-            <div class="stat-card card-yellow">
-              <div class="card-content">
-                <h3>Poupança</h3>
-                <p class="card-value">R$ 1.000,00</p>
-                <span class="card-trend neutral"
-                  >0% em relação ao mês anterior</span
-                >
-              </div>
-              <div class="card-icon">
-                <i>🏦</i>
-              </div>
-            </div>
+            <div class="cardBaixo">R$ 1.200,00</div>
           </div>
-
-          <div class="dashboard-grid">
-            <div class="chart-container">
-              <h3>Resumo Financeiro</h3>
-              <div class="chart-wrapper">
-                <canvas id="overview-chart"></canvas>
-              </div>
+          <div class="cardFora">
+            <div class="cardCima">
+              Total
+              <i class="ph ph-currency-dollar"></i>
             </div>
 
-            <div class="chart-container">
-              <h3>Evolução Mensal</h3>
-              <div class="chart-wrapper">
-                <canvas id="evolution-chart"></canvas>
-              </div>
-            </div>
+            <div class="cardBaixo">R$ 1.200,00</div>
           </div>
-
-          <div class="recent-activity">
-            <h3>Transações Recentes</h3>
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Descrição</th>
-                  <th>Categoria</th>
-                  <th>Valor</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>15/06/2023</td>
-                  <td>Salário</td>
-                  <td><span class="badge receita">Receita</span></td>
-                  <td class="value-positive">R$ 3.000,00</td>
-                </tr>
-                <tr>
-                  <td>10/06/2023</td>
-                  <td>Supermercado</td>
-                  <td><span class="badge despesa">Alimentação</span></td>
-                  <td class="value-negative">R$ 300,00</td>
-                </tr>
-                <tr>
-                  <td>05/06/2023</td>
-                  <td>Aluguel</td>
-                  <td><span class="badge despesa">Moradia</span></td>
-                  <td class="value-negative">R$ 800,00</td>
-                </tr>
-                <tr>
-                  <td>01/06/2023</td>
-                  <td>Transferência para poupança</td>
-                  <td><span class="badge poupanca">Poupança</span></td>
-                  <td class="value-neutral">R$ 500,00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <!-- Receitas Page -->
-        <section id="receitas" class="page">
-          <div class="section-header">
-            <h2>Receitas</h2>
-            <button class="btn btn-primary" id="add-receita-btn">
-              Nova Receita
-            </button>
-          </div>
-
-          <div class="filter-section">
-            <div class="filter-group">
-              <label for="receita-period">Período:</label>
-              <select id="receita-period" class="filter-select">
-                <option value="mes">Este Mês</option>
-                <option value="trimestre">Este Trimestre</option>
-                <option value="ano">Este Ano</option>
-                <option value="todos">Todos</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="receita-category">Categoria:</label>
-              <select id="receita-category" class="filter-select">
-                <option value="todas">Todas</option>
-                <option value="salario">Salário</option>
-                <option value="freelance">Freelance</option>
-                <option value="investimentos">Investimentos</option>
-                <option value="outros">Outros</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <input
-                type="search"
-                id="receita-search"
-                placeholder="Buscar receita..."
-                class="filter-input"
-              />
-            </div>
-          </div>
-
-          <div class="table-container">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Descrição</th>
-                  <th>Categoria</th>
-                  <th>Valor</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody id="receitas-table-body">
-                <tr>
-                  <td>15/06/2023</td>
-                  <td>Salário</td>
-                  <td><span class="badge receita">Salário</span></td>
-                  <td class="value-positive">R$ 3.000,00</td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>20/06/2023</td>
-                  <td>Freelance</td>
-                  <td><span class="badge receita">Freelance</span></td>
-                  <td class="value-positive">R$ 500,00</td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>28/06/2023</td>
-                  <td>Dividendos</td>
-                  <td><span class="badge receita">Investimentos</span></td>
-                  <td class="value-positive">R$ 120,00</td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="summary-section">
-            <div class="summary-card">
-              <h4>Total de Receitas</h4>
-              <p class="value-positive">R$ 3.620,00</p>
-            </div>
-            <div class="summary-card">
-              <h4>Média Mensal</h4>
-              <p>R$ 3.500,00</p>
-            </div>
-            <div class="summary-card">
-              <h4>Maior Receita</h4>
-              <p>R$ 3.000,00</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Despesas Page -->
-        <section id="despesas" class="page">
-          <div class="section-header">
-            <h2>Despesas</h2>
-            <button class="btn btn-primary" id="add-despesa-btn">
-              Nova Despesa
-            </button>
-          </div>
-
-          <div class="filter-section">
-            <div class="filter-group">
-              <label for="despesa-period">Período:</label>
-              <select id="despesa-period" class="filter-select">
-                <option value="mes">Este Mês</option>
-                <option value="trimestre">Este Trimestre</option>
-                <option value="ano">Este Ano</option>
-                <option value="todos">Todos</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="despesa-category">Categoria:</label>
-              <select id="despesa-category" class="filter-select">
-                <option value="todas">Todas</option>
-                <option value="alimentacao">Alimentação</option>
-                <option value="moradia">Moradia</option>
-                <option value="transporte">Transporte</option>
-                <option value="saude">Saúde</option>
-                <option value="lazer">Lazer</option>
-                <option value="educacao">Educação</option>
-                <option value="outros">Outros</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <input
-                type="search"
-                id="despesa-search"
-                placeholder="Buscar despesa..."
-                class="filter-input"
-              />
-            </div>
-          </div>
-
-          <div class="dashboard-grid">
-            <div class="chart-container">
-              <h3>Despesas por Categoria</h3>
-              <div class="chart-wrapper">
-                <canvas id="expenses-chart"></canvas>
-              </div>
-            </div>
-
-            <div class="table-container">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Data</th>
-                    <th>Descrição</th>
-                    <th>Categoria</th>
-                    <th>Valor</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody id="despesas-table-body">
-                  <tr>
-                    <td>05/06/2023</td>
-                    <td>Aluguel</td>
-                    <td><span class="badge despesa">Moradia</span></td>
-                    <td class="value-negative">R$ 800,00</td>
-                    <td>
-                      <div class="action-buttons">
-                        <button class="btn-icon btn-edit"><i>✏️</i></button>
-                        <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10/06/2023</td>
-                    <td>Supermercado</td>
-                    <td><span class="badge despesa">Alimentação</span></td>
-                    <td class="value-negative">R$ 300,00</td>
-                    <td>
-                      <div class="action-buttons">
-                        <button class="btn-icon btn-edit"><i>✏️</i></button>
-                        <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>15/06/2023</td>
-                    <td>Gasolina</td>
-                    <td><span class="badge despesa">Transporte</span></td>
-                    <td class="value-negative">R$ 150,00</td>
-                    <td>
-                      <div class="action-buttons">
-                        <button class="btn-icon btn-edit"><i>✏️</i></button>
-                        <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>18/06/2023</td>
-                    <td>Farmácia</td>
-                    <td><span class="badge despesa">Saúde</span></td>
-                    <td class="value-negative">R$ 120,00</td>
-                    <td>
-                      <div class="action-buttons">
-                        <button class="btn-icon btn-edit"><i>✏️</i></button>
-                        <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>20/06/2023</td>
-                    <td>Netflix</td>
-                    <td><span class="badge despesa">Lazer</span></td>
-                    <td class="value-negative">R$ 39,90</td>
-                    <td>
-                      <div class="action-buttons">
-                        <button class="btn-icon btn-edit"><i>✏️</i></button>
-                        <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="summary-section">
-            <div class="summary-card">
-              <h4>Total de Despesas</h4>
-              <p class="value-negative">R$ 1.409,90</p>
-            </div>
-            <div class="summary-card">
-              <h4>Média Mensal</h4>
-              <p>R$ 1.500,00</p>
-            </div>
-            <div class="summary-card">
-              <h4>Maior Despesa</h4>
-              <p>R$ 800,00</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Poupança Page -->
-        <section id="poupanca" class="page">
-          <div class="section-header">
-            <h2>Poupança</h2>
-            <button class="btn btn-primary" id="add-poupanca-btn">
-              Nova Movimentação
-            </button>
-          </div>
-
-          <div class="dashboard-grid">
-            <div class="chart-container">
-              <h3>Evolução da Poupança</h3>
-              <div class="chart-wrapper">
-                <canvas id="savings-chart"></canvas>
-              </div>
-            </div>
-
-            <div class="savings-summary">
-              <div class="stat-card card-blue full-width">
-                <div class="card-content">
-                  <h3>Saldo Atual</h3>
-                  <p class="card-value">R$ 12.500,00</p>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width: 62.5%"></div>
-                  </div>
-                  <span class="progress-label"
-                    >62,5% da meta (R$ 20.000,00)</span
-                  >
-                </div>
-              </div>
-
-              <div class="cards-grid">
-                <div class="stat-card card-green small">
-                  <div class="card-content">
-                    <h3>Depósitos</h3>
-                    <p class="card-value">R$ 500,00</p>
-                    <span class="card-trend positive">Este mês</span>
-                  </div>
-                </div>
-
-                <div class="stat-card card-red small">
-                  <div class="card-content">
-                    <h3>Retiradas</h3>
-                    <p class="card-value">R$ 0,00</p>
-                    <span class="card-trend neutral">Este mês</span>
-                  </div>
-                </div>
-
-                <div class="stat-card card-yellow small">
-                  <div class="card-content">
-                    <h3>Rendimento</h3>
-                    <p class="card-value">R$ 62,50</p>
-                    <span class="card-trend positive">Este mês (0,5%)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="table-container">
-            <h3>Histórico de Movimentações</h3>
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Descrição</th>
-                  <th>Tipo</th>
-                  <th>Valor</th>
-                  <th>Saldo</th>
-                </tr>
-              </thead>
-              <tbody id="poupanca-table-body">
-                <tr>
-                  <td>01/06/2023</td>
-                  <td>Transferência para poupança</td>
-                  <td><span class="badge receita">Depósito</span></td>
-                  <td class="value-positive">R$ 500,00</td>
-                  <td>R$ 12.000,00</td>
-                </tr>
-                <tr>
-                  <td>30/06/2023</td>
-                  <td>Rendimento mensal</td>
-                  <td><span class="badge receita">Rendimento</span></td>
-                  <td class="value-positive">R$ 62,50</td>
-                  <td>R$ 12.500,00</td>
-                </tr>
-                <tr>
-                  <td>01/05/2023</td>
-                  <td>Transferência para poupança</td>
-                  <td><span class="badge receita">Depósito</span></td>
-                  <td class="value-positive">R$ 500,00</td>
-                  <td>R$ 11.500,00</td>
-                </tr>
-                <tr>
-                  <td>15/05/2023</td>
-                  <td>Retirada emergencial</td>
-                  <td><span class="badge despesa">Retirada</span></td>
-                  <td class="value-negative">R$ 400,00</td>
-                  <td>R$ 11.100,00</td>
-                </tr>
-                <tr>
-                  <td>31/05/2023</td>
-                  <td>Rendimento mensal</td>
-                  <td><span class="badge receita">Rendimento</span></td>
-                  <td class="value-positive">R$ 55,50</td>
-                  <td>R$ 11.155,50</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <!-- Orçamento Page -->
-        <section id="budget" class="page">
-          <div class="section-header">
-            <h2>Orçamento</h2>
-            <button class="btn btn-primary" id="add-budget-btn">
-              Adicionar Orçamento
-            </button>
-          </div>
-
-          <div class="filter-section">
-            <div class="filter-group">
-              <label for="budget-period">Período:</label>
-              <select id="budget-period" class="filter-select">
-                <option value="mes">Este Mês</option>
-                <option value="proximo">Próximo Mês</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="table-container">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Categoria</th>
-                  <th>Limite</th>
-                  <th>Gasto</th>
-                  <th>Restante</th>
-                  <th>Progresso</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody id="budget-table-body">
-                <tr>
-                  <td>Alimentação</td>
-                  <td>R$ 500,00</td>
-                  <td>R$ 300,00</td>
-                  <td>R$ 200,00</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 60%"></div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Moradia</td>
-                  <td>R$ 1.000,00</td>
-                  <td>R$ 800,00</td>
-                  <td>R$ 200,00</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div
-                        class="progress-fill warning"
-                        style="width: 80%"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Transporte</td>
-                  <td>R$ 300,00</td>
-                  <td>R$ 250,00</td>
-                  <td>R$ 50,00</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div
-                        class="progress-fill warning"
-                        style="width: 83%"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Lazer</td>
-                  <td>R$ 200,00</td>
-                  <td>R$ 150,00</td>
-                  <td>R$ 50,00</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 75%"></div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Saúde</td>
-                  <td>R$ 400,00</td>
-                  <td>R$ 120,00</td>
-                  <td>R$ 280,00</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 30%"></div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Educação</td>
-                  <td>R$ 300,00</td>
-                  <td>R$ 0,00</td>
-                  <td>R$ 300,00</td>
-                  <td>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="action-buttons">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="summary-section">
-            <div class="summary-card">
-              <h4>Total Orçado</h4>
-              <p>R$ 2.700,00</p>
-            </div>
-            <div class="summary-card">
-              <h4>Total Gasto</h4>
-              <p class="value-negative">R$ 1.620,00</p>
-            </div>
-            <div class="summary-card">
-              <h4>Disponível</h4>
-              <p class="value-positive">R$ 1.080,00</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Metas Page -->
-        <section id="metas" class="page">
-          <div class="section-header">
-            <h2>Metas Financeiras</h2>
-            <button class="btn btn-primary" id="add-meta-btn">Nova Meta</button>
-          </div>
-
-          <div class="metas-grid">
-            <div class="meta-card">
-              <div class="meta-header">
-                <h3>Viagem</h3>
-                <span class="meta-tag">Em progresso</span>
-              </div>
-              <p class="meta-description">Viagem para a Europa em 2024</p>
-              <div class="meta-values">
-                <span class="meta-saved">R$ 5.000,00</span>
-                <span class="meta-target">de R$ 15.000,00</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 33.33%"></div>
-              </div>
-              <div class="meta-footer">
-                <span class="meta-date">Prazo: Dez/2023</span>
-                <div class="action-buttons">
-                  <button class="btn-icon btn-edit"><i>✏️</i></button>
-                  <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="meta-card">
-              <div class="meta-header">
-                <h3>Carro Novo</h3>
-                <span class="meta-tag">Em progresso</span>
-              </div>
-              <p class="meta-description">Entrada para um carro novo</p>
-              <div class="meta-values">
-                <span class="meta-saved">R$ 8.000,00</span>
-                <span class="meta-target">de R$ 20.000,00</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 40%"></div>
-              </div>
-              <div class="meta-footer">
-                <span class="meta-date">Prazo: Jun/2024</span>
-                <div class="action-buttons">
-                  <button class="btn-icon btn-edit"><i>✏️</i></button>
-                  <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="meta-card">
-              <div class="meta-header">
-                <h3>Fundo de Emergência</h3>
-                <span class="meta-tag meta-tag-success">Concluída</span>
-              </div>
-              <p class="meta-description">6 meses de despesas guardadas</p>
-              <div class="meta-values">
-                <span class="meta-saved">R$ 10.000,00</span>
-                <span class="meta-target">de R$ 10.000,00</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill success" style="width: 100%"></div>
-              </div>
-              <div class="meta-footer">
-                <span class="meta-date">Concluída: Abr/2023</span>
-                <div class="action-buttons">
-                  <button class="btn-icon btn-edit"><i>✏️</i></button>
-                  <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="meta-card add-meta">
-              <div class="add-meta-content">
-                <div class="add-icon">+</div>
-                <p>Adicionar Nova Meta</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Relatórios Page -->
-        <section id="relatorios" class="page">
-          <div class="section-header">
-            <h2>Relatórios</h2>
-          </div>
-
-          <div class="filter-section">
-            <div class="filter-group">
-              <label for="relatorio-period">Período:</label>
-              <select id="relatorio-period" class="filter-select">
-                <option value="mes">Este Mês</option>
-                <option value="trimestre">Este Trimestre</option>
-                <option value="ano">Este Ano</option>
-                <option value="personalizado">Personalizado</option>
-              </select>
-            </div>
-            <div
-              class="filter-group date-range"
-              id="date-range-container"
-              style="display: none"
-            >
-              <input type="date" id="date-start" class="filter-input" />
-              <span>até</span>
-              <input type="date" id="date-end" class="filter-input" />
-            </div>
-            <div class="filter-group">
-              <button id="generate-report" class="btn btn-primary">
-                Gerar Relatório
-              </button>
-              <button id="export-pdf" class="btn btn-secondary">
-                Exportar PDF
-              </button>
-            </div>
-          </div>
-
-          <div class="dashboard-grid">
-            <div class="chart-container">
-              <h3>Evolução Financeira</h3>
-              <div class="chart-wrapper">
-                <canvas id="report-evolution-chart"></canvas>
-              </div>
-            </div>
-
-            <div class="chart-container">
-              <h3>Despesas por Categoria</h3>
-              <div class="chart-wrapper">
-                <canvas id="report-expenses-chart"></canvas>
-              </div>
-            </div>
-          </div>
-
-          <div class="report-summary">
-            <h3>Resumo Financeiro</h3>
-            <div class="summary-grid">
-              <div class="report-card">
-                <h4>Receitas</h4>
-                <p class="value-positive">R$ 3.620,00</p>
-              </div>
-              <div class="report-card">
-                <h4>Despesas</h4>
-                <p class="value-negative">R$ 1.620,00</p>
-              </div>
-              <div class="report-card">
-                <h4>Saldo</h4>
-                <p class="value-positive">R$ 2.000,00</p>
-              </div>
-              <div class="report-card">
-                <h4>Taxa de Economia</h4>
-                <p class="value-positive">55,2%</p>
-              </div>
-              <div class="report-card">
-                <h4>Poupança</h4>
-                <p class="value-neutral">R$ 500,00</p>
-              </div>
-              <div class="report-card">
-                <h4>Maior Despesa</h4>
-                <p>Moradia (49,4%)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="section-divider"></div>
-
-          <div class="insights">
-            <h3>Insights Financeiros</h3>
-            <div class="insights-grid">
-              <div class="insight-card positive">
-                <div class="insight-icon">↗️</div>
-                <div class="insight-content">
-                  <h4>Aumento nas receitas</h4>
-                  <p>Suas receitas aumentaram 5% em relação ao mês anterior.</p>
-                </div>
-              </div>
-              <div class="insight-card negative">
-                <div class="insight-icon">⚠️</div>
-                <div class="insight-content">
-                  <h4>Orçamento de Transporte</h4>
-                  <p>
-                    Você está próximo de atingir o limite orçado para Transporte
-                    (83%).
-                  </p>
-                </div>
-              </div>
-              <div class="insight-card positive">
-                <div class="insight-icon">💰</div>
-                <div class="insight-content">
-                  <h4>Taxa de Economia</h4>
-                  <p>
-                    Você economizou 55,2% da sua renda este mês, acima da meta
-                    de 30%.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Configurações Page -->
-        <section id="configuracoes" class="page">
-          <div class="section-header">
-            <h2>Configurações</h2>
-          </div>
-
-          <div class="settings-container">
-            <div class="settings-section">
-              <h3>Perfil</h3>
-              <div class="settings-form">
-                <div class="form-group">
-                  <label for="user-name">Nome</label>
-                  <input
-                    type="text"
-                    id="user-name"
-                    value="Meu Controle"
-                    class="form-input"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="user-email">Email</label>
-                  <input
-                    type="email"
-                    id="user-email"
-                    value="controle@financas.com"
-                    class="form-input"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="user-currency">Moeda</label>
-                  <select id="user-currency" class="form-input">
-                    <option value="BRL" selected>Real (R$)</option>
-                    <option value="USD">Dólar ($)</option>
-                    <option value="EUR">Euro (€)</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="user-theme">Tema</label>
-                  <select id="user-theme" class="form-input">
-                    <option value="light" selected>Claro</option>
-                    <option value="dark">Escuro</option>
-                    <option value="system">Sistema</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="settings-section">
-              <h3>Categorias</h3>
-              <div class="settings-subsection">
-                <h4>Categorias de Receitas</h4>
-                <ul class="categories-list" id="receita-categories">
-                  <li>
-                    <span>Salário</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Freelance</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Investimentos</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                </ul>
-                <button class="btn btn-small" id="add-receita-category">
-                  + Adicionar Categoria
-                </button>
-              </div>
-
-              <div class="settings-subsection">
-                <h4>Categorias de Despesas</h4>
-                <ul class="categories-list" id="despesa-categories">
-                  <li>
-                    <span>Alimentação</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Moradia</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Transporte</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Saúde</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Lazer</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                  <li>
-                    <span>Educação</span>
-                    <div class="category-actions">
-                      <button class="btn-icon btn-edit"><i>✏️</i></button>
-                      <button class="btn-icon btn-delete"><i>🗑️</i></button>
-                    </div>
-                  </li>
-                </ul>
-                <button class="btn btn-small" id="add-despesa-category">
-                  + Adicionar Categoria
-                </button>
-              </div>
-            </div>
-
-            <div class="settings-section">
-              <h3>Backup e Exportação</h3>
-              <div class="button-group">
-                <button class="btn btn-primary" id="backup-data">
-                  Fazer Backup
-                </button>
-                <button class="btn btn-secondary" id="import-data">
-                  Importar Dados
-                </button>
-                <button class="btn btn-secondary" id="export-data">
-                  Exportar Dados
-                </button>
-              </div>
-            </div>
-
-            <div class="settings-actions">
-              <button class="btn btn-primary" id="save-settings">
-                Salvar Alterações
-              </button>
-              <button class="btn btn-danger" id="reset-data">
-                Resetar Todos os Dados
-              </button>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <!-- Modal Transação -->
-    <div class="modal" id="transaction-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 id="transaction-modal-title">Nova Transação</h3>
-          <button class="modal-close">&times;</button>
         </div>
-        <div class="modal-body">
-          <form id="transaction-form">
-            <div class="form-group">
-              <label for="transaction-type">Tipo</label>
-              <select
-                id="transaction-type"
-                name="tipo"
-                class="form-input"
-                required
-              >
-                <option value="receita">Receita</option>
-                <option value="despesa">Despesa</option>
-                <option value="transferencia">Transferência</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="transaction-date">Data</label>
-              <input
-                type="date"
-                id="transaction-date"
-                name="data"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="transaction-description">Descrição</label>
+
+        <div class="linhaFiltros">
+          <div class="divPesquisa">
+            <div id="pesquisa">
               <input
                 type="text"
-                id="transaction-description"
+                class="form-control"
+                id="inputPesquisar"
+                placeholder="Pesquisar..."
+              />
+            </div>
+            <i id="imgPesquisa" class="ph ph-magnifying-glass"></i>
+          </div>
+          <i id="imgFunil" class="ph ph-funnel"></i>
+        </div>
+
+        <div class="tabela">
+          <table>
+            <thead class="cabecalho">
+              <tr id="cabecalhoTransacoes">
+                <th class="colunaData">Data</th>
+                <th colspan="2">Descrição</th>
+                <th>Valor</th>
+                <th>Categoria</th>
+                <th class="colunaIcone"></th>
+                <th class="colunaIcone"></th>
+              </tr>
+            </thead>
+            <tbody id="listaTransacoes"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Nova transação</h2>
+          <button class="close"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="modal-body">
+          <form id="formNovaTransacao">
+            <div class="form-group">
+              <label for="data">Data</label>
+              <input type="date" id="data" name="data" required />
+            </div>
+            <div class="form-group">
+              <label for="descricao">Descrição</label>
+              <input
+                type="text"
+                id="descrica
+                        o"
                 name="descricao"
-                class="form-input"
                 required
               />
             </div>
             <div class="form-group">
-              <label for="transaction-amount">Valor (R$)</label>
-              <input
-                type="number"
-                id="transaction-amount"
-                name="valor"
-                step="0.01"
-                min="0"
-                class="form-input"
-                required
-              />
+              <label for="valor">Valor</label>
+              <input type="number" id="valor" name="valor" required />
             </div>
             <div class="form-group">
-              <label for="transaction-category">Categoria</label>
-              <select
-                id="transaction-category"
-                name="categoria"
-                class="form-input"
-                required
-              >
-                <option value="">Selecione uma categoria</option>
-                <!-- Categorias serão preenchidas via JavaScript -->
-              </select>
-            </div>
-            <div
-              class="form-group"
-              id="conta-destino-group"
-              style="display: none"
-            >
-              <label for="transaction-destination">Conta Destino</label>
-              <select
-                id="transaction-destination"
-                name="destino"
-                class="form-input"
-              >
-                <option value="poupanca">Poupança</option>
-                <option value="investimentos">Investimentos</option>
+              <label for="categoria">Categoria</label>
+              <select id="categoria" name="categoria" required>
+                <option value="1">Alimentação</option>
+                <option value="2">Transporte</option>
+                <option value="3">Lazer</option>
+                <option value="4">Saúde</option>
+                <option value="5">Outros</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="transaction-notes">Observações</label>
-              <textarea
-                id="transaction-notes"
-                name="observacoes"
-                class="form-input"
-                rows="3"
-              ></textarea>
-            </div>
-            <div class="form-actions">
-              <button type="button" class="btn btn-secondary modal-cancel">
-                Cancelar
-              </button>
-              <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Orçamento -->
-    <div class="modal" id="budget-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 id="budget-modal-title">Adicionar Orçamento</h3>
-          <button class="modal-close">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="budget-form">
-            <div class="form-group">
-              <label for="budget-category">Categoria</label>
-              <select
-                id="budget-category"
-                name="categoria"
-                class="form-input"
-                required
-              >
-                <option value="">Selecione uma categoria</option>
-                <!-- Categorias serão preenchidas via JavaScript -->
+              <label for="tipo">Tipo</label>
+              <select id="tipo" name="tipo" required>
+                <option value="1">Entrada</option>
+                <option value="2">Saída</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="budget-limit">Limite (R$)</label>
-              <input
-                type="number"
-                id="budget-limit"
-                name="limite"
-                min="0"
-                step="0.01"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="budget-month">Mês</label>
-              <select id="budget-month" name="mes" class="form-input" required>
-                <option value="atual">Mês Atual</option>
-                <option value="proximo">Próximo Mês</option>
-              </select>
-            </div>
-            <div class="form-actions">
-              <button type="button" class="btn btn-secondary modal-cancel">
-                Cancelar
-              </button>
-              <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Meta -->
-    <div class="modal" id="meta-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 id="meta-modal-title">Nova Meta</h3>
-          <button class="modal-close">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="meta-form">
-            <div class="form-group">
-              <label for="meta-name">Nome</label>
-              <input
-                type="text"
-                id="meta-name"
-                name="nome"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="meta-description">Descrição</label>
-              <textarea
-                id="meta-description"
-                name="descricao"
-                class="form-input"
-                rows="2"
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <label for="meta-target">Valor Alvo (R$)</label>
-              <input
-                type="number"
-                id="meta-target"
-                name="valor"
-                min="0"
-                step="0.01"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="meta-current">Valor Atual (R$)</label>
-              <input
-                type="number"
-                id="meta-current"
-                name="atual"
-                min="0"
-                step="0.01"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="meta-date">Data Limite</label>
-              <input
-                type="date"
-                id="meta-date"
-                name="prazo"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-actions">
-              <button type="button" class="btn btn-secondary modal-cancel">
-                Cancelar
-              </button>
-              <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Categoria -->
-    <div class="modal" id="category-modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 id="category-modal-title">Nova Categoria</h3>
-          <button class="modal-close">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="category-form">
-            <div class="form-group">
-              <label for="category-type">Tipo</label>
-              <select
-                id="category-type"
-                name="tipo"
-                class="form-input"
-                required
-              >
-                <option value="receita">Receita</option>
-                <option value="despesa">Despesa</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="category-name">Nome</label>
-              <input
-                type="text"
-                id="category-name"
-                name="nome"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-actions">
-              <button type="button" class="btn btn-secondary modal-cancel">
-                Cancelar
-              </button>
-              <button type="submit" class="btn btn-primary">Salvar</button>
-            </div>
+            <button type="submit">Salvar</button>
           </form>
         </div>
       </div>
     </div>
   </body>
+
+  <script src="../js/servidor.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/pages/transacoes.js"></script>
 </html>

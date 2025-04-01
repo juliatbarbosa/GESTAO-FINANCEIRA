@@ -22,9 +22,7 @@ app.use("/categorias", categoriaRoutes);
 app.use("/financeiro", financeiroRoutes);
 
 // Servir arquivos estáticos do frontend
-// app.use(express.static(path.join(__dirname, "..", "frontend/layout2/pages")));
-
-app.use(express.static(path.join(__dirname, "frontend")));
+ app.use(express.static(path.join(__dirname, "..", "frontend")));
 
 // Tratamento de erro global
 app.use((err, req, res, next) => {

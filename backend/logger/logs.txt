@@ -572,3 +572,49 @@
 [2025-04-01T00:36:20.225Z] [INFO] Requisição: GET /js/pages/transacoes.js
 [2025-04-01T00:37:26.994Z] [INFO] Servidor rodando em http://localhost:3333
 [2025-04-01T00:37:29.609Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:34.039Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-01T00:41:37.386Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:38.184Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:38.377Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:38.590Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:38.744Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:39.012Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:50.973Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-01T00:41:53.082Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:53.699Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:53.858Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:54.026Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:54.141Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:54.293Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:54.444Z] [INFO] Requisição: GET /
+[2025-04-01T00:41:54.582Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:54.607Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-01T00:42:57.571Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:58.157Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:58.323Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:58.499Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:58.636Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:58.770Z] [INFO] Requisição: GET /
+[2025-04-01T00:42:59.036Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:34.428Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-01T00:43:36.164Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:36.833Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:36.979Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:37.140Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:37.291Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:37.451Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:37.607Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:37.805Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:38.098Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:38.283Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:38.457Z] [INFO] Requisição: GET /
+[2025-04-01T00:43:38.636Z] [INFO] Requisição: GET /
+[2025-04-01T00:44:35.932Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-01T00:44:37.783Z] [INFO] Requisição: GET /
+[2025-04-01T00:44:37.813Z] [INFO] Requisição: GET /css/style.css
+[2025-04-01T00:44:37.819Z] [INFO] Requisição: GET /js/framework/moment.min.js
+[2025-04-01T00:44:37.821Z] [INFO] Requisição: GET /img/logo.png
+[2025-04-01T00:44:37.824Z] [INFO] Requisição: GET /js/servidor.js
+[2025-04-01T00:44:37.853Z] [INFO] Requisição: GET /js/utils.js
+[2025-04-01T00:44:37.854Z] [INFO] Requisição: GET /js/pages/transacoes.js
+[2025-04-01T00:44:37.895Z] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
