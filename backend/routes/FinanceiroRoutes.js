@@ -1,4 +1,4 @@
-const financeiroRoutes = require("./FinanceiroController");
+const financeiroRoutes = require("../routes/FinanceiroRoutes");
 
 module.exports = (app) => {
     app.post("/financeiro", financeiroRoutes.post);

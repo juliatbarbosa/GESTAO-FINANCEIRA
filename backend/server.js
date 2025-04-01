@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const logger = require("./logger"); // Importa o logger
+const logger = require("./logger/logger");
 
 const app = express();
 
@@ -22,7 +22,9 @@ app.use("/categorias", categoriaRoutes);
 app.use("/financeiro", financeiroRoutes);
 
 // Servir arquivos estáticos do frontend
-app.use(express.static(path.join(__dirname, "..", "frontend")));
+// app.use(express.static(path.join(__dirname, "..", "frontend/layout2/pages")));
+
+app.use(express.static(path.join(__dirname, "frontend")));
 
 // Tratamento de erro global
 app.use((err, req, res, next) => {
