@@ -808,3 +808,391 @@
 [04/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
 [04/04/2025] [INFO] Requisição: GET /componente/tipo
 [04/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Requisição: GET /
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /favicon.ico
+[05/04/2025] [INFO] Requisição: GET /pages/index.html
+[05/04/2025] [INFO] Requisição: GET /index.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /pages/index.html
+[05/04/2025] [INFO] Requisição: GET /index.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /index.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /index.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /index.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /index.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [ERROR] Erro ao buscar registros: read ECONNRESET
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /categorias/categoria?ativo=false&descricao
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined

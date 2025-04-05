@@ -35,3 +35,32 @@ function formataData(data) {
     const dataFormatada = moment(data).format('DD/MM/YYYY');
     return dataFormatada;
 }
+
+function abrirLoading() {
+    document.querySelector('#loading').style.display = "flex"
+}
+
+function fecharLoading() {
+    document.querySelector('#loading').style.display = "none"
+}
+
+function toast(mensagem, success) {
+    document.querySelector('.toast-body').innerHTML = mensagem
+    document.querySelector('.toast').style.backgroundColor = (success ? 'var(--primaria-700)' : 'var(--error)');
+    modalToast.show()
+}
+
+function validarInputs(...inputs) {
+    let temErro = false;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            input.classList.add('inputError');
+            temErro = true;
+        } else {
+            input.classList.remove('inputError');
+        }
+    });
+
+    return !temErro;
+}
