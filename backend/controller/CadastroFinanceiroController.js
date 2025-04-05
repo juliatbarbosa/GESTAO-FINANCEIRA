@@ -93,7 +93,7 @@ exports.getById = async (req, res, next) => {
         logger.error(`Erro ao buscar registros: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao buscar registros" });
     } finally {
-        if (conn) cconn.end();
+        if (conn) conn.end();
     }
 };
 
@@ -177,6 +177,6 @@ exports.get = async (req, res, next) => {
         logger.error(`Erro ao buscar registros: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao buscar registros" });
     } finally {
-        if (conn) cconn.end();
+        if (conn) conn.end();
     }
 };
