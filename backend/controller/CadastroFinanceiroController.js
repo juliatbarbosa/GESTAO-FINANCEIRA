@@ -111,27 +111,27 @@ exports.get = async (req, res, next) => {
 
         let filtros = "";
         if (descricao) {
-            filtros += " AND descricao LIKE ?";
+            filtros += " AND ff.descricao LIKE ?";
             params.push(`%${descricao}%`);
         }
 
         if (datainicio) {
-            filtros += " AND data >= ?";
+            filtros += " AND ff.data >= ?";
             params.push(datainicio);
         }
 
         if (datafinal) {
-            filtros += " AND data <= ?";
+            filtros += " AND ff.data <= ?";
             params.push(datafinal);
         }
 
         if (tipo) {
-            filtros += " AND tipo = ?";
+            filtros += " AND ff.tipo = ?";
             params.push(tipo);
         }
 
         if (idcategoria) {
-            filtros += " AND idcategoria = ?";
+            filtros += " AND ff.idcategoria = ?";
             params.push(idcategoria);
         }
 

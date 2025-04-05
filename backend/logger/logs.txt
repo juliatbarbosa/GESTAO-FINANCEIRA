@@ -1222,3 +1222,14 @@
 [05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
 [05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
 [05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=inter&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [ERROR] Erro ao buscar registros: Column 'descricao' in WHERE is ambiguous
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=inter&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=para&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: cconn is not defined
