@@ -19,7 +19,6 @@ exports.post = async (req, res, next) => {
         const values = [financeiro.descricao, financeiro.data, financeiro.idcategoria, financeiro.tipo, financeiro.valor];
         await conn.query(sql, values);
         logger.info(`Registro financeiro criado: ${JSON.stringify(financeiro)}`);
-
         res.status(200).json(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao inserir financeiro: ${error.message}`);

@@ -62,11 +62,16 @@ exports.get = async (req, res, next) => {
     try {
         conn = await connect.getConnection();
 
-        const { ativo, descricao } = req.query;
+        const { ativo, descricao, idcategoria } = req.query;
         let sql = "SELECT * FROM fn_categoria WHERE 1=1";
         const params = [];
 
-        if (ativo !== undefined) {
+        if (idcategoria) {
+            sql += " AND idcategoria = ?";
+            params.push(idcategoria);
+        }
+
+        if (ativo) {
             sql += " AND ativo = ?";
             params.push(ativo === "true" || ativo === "1" ? 1 : 0);
         }
