@@ -1,7 +1,10 @@
-const financeiroRoutes = require("../routes/FinanceiroRoutes");
+const express = require("express");
+const router = express.Router();
 
-module.exports = (app) => {
-    app.post("/financeiro", financeiroRoutes.post);
-    app.put("/financeiro/:id", financeiroRoutes.put);
-    app.get("/financeiro", financeiroRoutes.get);
-}
+const financeiroController = require("../controller/CadastroFinanceiroController.js");
+
+router.post("/financeiro", financeiroController.post);
+router.put("/financeiro", financeiroController.put);
+router.get("/financeiro", financeiroController.get);
+
+module.exports = router;

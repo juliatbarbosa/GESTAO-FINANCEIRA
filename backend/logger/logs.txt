@@ -618,3 +618,193 @@
 [2025-04-01T00:44:37.853Z] [INFO] Requisição: GET /js/utils.js
 [2025-04-01T00:44:37.854Z] [INFO] Requisição: GET /js/pages/transacoes.js
 [2025-04-01T00:44:37.895Z] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[2025-04-04T22:39:27.396Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T22:44:19.548Z] [INFO] Requisição: GET /categoria
+[2025-04-04T22:45:29.654Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T22:45:29.656Z] [ERROR] Erro no servidor: app.post is not a function
+[2025-04-04T22:50:13.001Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T22:50:13.003Z] [ERROR] Erro no servidor: app.post is not a function
+[2025-04-04T22:59:37.442Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T22:59:40.945Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T22:59:41.551Z] [INFO] Consulta realizada: 0 categorias encontradas.
+[2025-04-04T23:00:56.411Z] [INFO] Requisição: POST /categoria
+[2025-04-04T23:01:57.740Z] [INFO] Requisição: POST /categorias/categoria
+[2025-04-04T23:01:57.885Z] [INFO] Categoria criada: {"idcategoria":null,"descricao":"CategoriaTeste","cor":"#ffffff","ativo":true}
+[2025-04-04T23:02:05.050Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:02:05.190Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-04T23:04:01.454Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:04:01.595Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-04T23:04:10.717Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:04:10.860Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-04T23:04:20.075Z] [INFO] Requisição: PUT /categorias/categoria
+[2025-04-04T23:04:28.958Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:04:34.957Z] [INFO] Requisição: PUT /categorias/categoria
+[2025-04-04T23:04:34.958Z] [ERROR] Erro ao atualizar categoria undefined: id is not defined
+[2025-04-04T23:05:53.984Z] [ERROR] Erro ao atualizar categoria undefined: id is not defined
+[2025-04-04T23:05:53.983Z] [INFO] Requisição: PUT /categorias/categoria
+[2025-04-04T23:06:03.065Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:06:03.635Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-04T23:06:40.414Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:06:42.881Z] [INFO] Requisição: PUT /categorias/categoria
+[2025-04-04T23:06:43.546Z] [INFO] Categoria atualizada: {"idcategoria":1,"descricao":"CategoriaTeste","cor":"#ffffff","ativo":false}
+[2025-04-04T23:06:47.340Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:06:47.506Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-04T23:07:13.007Z] [INFO] Requisição: GET /
+[2025-04-04T23:07:13.283Z] [INFO] Requisição: GET /css/style.css
+[2025-04-04T23:07:13.291Z] [INFO] Requisição: GET /js/framework/moment.min.js
+[2025-04-04T23:07:13.294Z] [INFO] Requisição: GET /img/logo.png
+[2025-04-04T23:07:13.301Z] [INFO] Requisição: GET /js/servidor.js
+[2025-04-04T23:07:13.309Z] [INFO] Requisição: GET /js/utils.js
+[2025-04-04T23:07:13.336Z] [INFO] Requisição: GET /js/pages/transacoes.js
+[2025-04-04T23:07:13.471Z] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[2025-04-04T23:07:13.649Z] [INFO] Requisição: GET /favicon.ico
+[2025-04-04T23:16:43.716Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:16:43.722Z] [ERROR] Erro ao buscar categorias: read ECONNRESET
+[2025-04-04T23:18:34.784Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:18:35.282Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:18:41.163Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:18:41.165Z] [ERROR] Erro ao buscar categorias: Cannot read properties of undefined (reading 'connection')
+[2025-04-04T23:20:59.088Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:20:59.519Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:21:02.138Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:21:02.284Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-04T23:21:17.818Z] [INFO] Requisição: POST /categorias/categoria
+[2025-04-04T23:21:17.960Z] [INFO] Categoria criada: {"idcategoria":null,"descricao":"CategoriaTeste2","cor":"#ffffff","ativo":true}
+[2025-04-04T23:21:22.212Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:21:22.352Z] [INFO] Consulta realizada: 2 categorias encontradas.
+[2025-04-04T23:23:38.320Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:23:39.337Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:23:41.795Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:23:41.962Z] [INFO] Consulta realizada: 2 categorias encontradas.
+[2025-04-04T23:23:41.967Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:32:20.000Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:32:20.434Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:33:40.903Z] [INFO] Requisição: GET /financeiro/financeiro
+[2025-04-04T23:33:41.054Z] [INFO] Consulta realizada: 0 registros encontrados.
+[2025-04-04T23:33:41.060Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:35:33.565Z] [INFO] Requisição: POST /financeiro/financeiro
+[2025-04-04T23:35:33.566Z] [ERROR] Erro ao inserir financeiro: cor is not defined
+[2025-04-04T23:35:33.569Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:36:31.273Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:36:31.704Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:36:34.752Z] [INFO] Requisição: POST /financeiro/financeiro
+[2025-04-04T23:36:34.753Z] [ERROR] Erro ao inserir financeiro: cor is not defined
+[2025-04-04T23:36:34.760Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:38:27.243Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:38:27.686Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:38:30.970Z] [INFO] Requisição: POST /financeiro/financeiro
+[2025-04-04T23:38:30.972Z] [ERROR] Erro ao inserir financeiro: Financeiro is not a constructor
+[2025-04-04T23:38:30.978Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:39:51.565Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:39:52.000Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:39:55.007Z] [INFO] Requisição: POST /financeiro/financeiro
+[2025-04-04T23:39:55.153Z] [INFO] financeiro criada: {"idfinanceiro":null,"descricao":"internet","data":"2025-04-04","idcategoria":1,"tipo":"SAIDA","valor":100}
+[2025-04-04T23:39:55.156Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:40:04.839Z] [INFO] Requisição: GET /financeiro/financeiro
+[2025-04-04T23:40:04.980Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:40:04.982Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:41:05.404Z] [INFO] Requisição: PUT /financeiro/financeiro
+[2025-04-04T23:41:05.558Z] [INFO] financeiro atualizada: {"idfinanceiro":1,"descricao":"internet","data":"2025-04-03","idcategoria":1,"tipo":"SAIDA","valor":100}
+[2025-04-04T23:41:05.559Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:41:08.571Z] [INFO] Requisição: GET /financeiro/financeiro
+[2025-04-04T23:41:08.712Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:41:08.713Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:43:29.167Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:43:29.604Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:43:33.698Z] [INFO] Requisição: PUT /financeiro/financeiro
+[2025-04-04T23:43:33.840Z] [ERROR] Erro ao atualizar financeiro undefined: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1
+[2025-04-04T23:43:33.844Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:44:03.233Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:44:03.673Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:44:05.291Z] [INFO] Requisição: PUT /financeiro/financeiro
+[2025-04-04T23:44:05.436Z] [INFO] financeiro atualizada: {"idfinanceiro":1,"descricao":"internet","data":"2025-04-03","idcategoria":1,"tipo":"SAIDA","valor":100,"dataalteracao":"2025-04-04T23:44:05.292Z"}
+[2025-04-04T23:44:05.440Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:44:09.783Z] [INFO] Requisição: GET /financeiro/financeiro
+[2025-04-04T23:44:09.928Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:44:09.931Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:45:06.540Z] [INFO] Requisição: GET /categorias/categoria
+[2025-04-04T23:45:06.683Z] [INFO] Consulta realizada: 2 categorias encontradas.
+[2025-04-04T23:45:06.685Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:53:01.902Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=inter&datainicio&datafinal&tipo&idcategoria
+[2025-04-04T23:53:01.905Z] [ERROR] Erro ao buscar registros: read ECONNRESET
+[2025-04-04T23:53:01.906Z] [ERROR] Erro no servidor: conn is not defined
+[2025-04-04T23:53:47.133Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-04T23:53:47.573Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-04T23:53:49.684Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=inter&datainicio&datafinal&tipo&idcategoria
+[2025-04-04T23:53:49.837Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:53:49.832Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:54:00.050Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=bar&datainicio&datafinal&tipo&idcategoria
+[2025-04-04T23:54:00.192Z] [INFO] Consulta realizada: 0 registros encontrados.
+[2025-04-04T23:54:00.194Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:04.010Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio&datafinal&tipo&idcategoria
+[2025-04-04T23:54:04.151Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:54:04.152Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:15.903Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=2025-04-01&datafinal&tipo&idcategoria
+[2025-04-04T23:54:16.046Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:54:16.048Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:19.792Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=2025-04-05&datafinal&tipo&idcategoria
+[2025-04-04T23:54:19.932Z] [INFO] Consulta realizada: 0 registros encontrados.
+[2025-04-04T23:54:19.933Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:24.965Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=2025-04-05&tipo&idcategoria
+[2025-04-04T23:54:25.107Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:54:25.108Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:28.595Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=2025-04-01&tipo&idcategoria
+[2025-04-04T23:54:28.737Z] [INFO] Consulta realizada: 0 registros encontrados.
+[2025-04-04T23:54:28.739Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:39.148Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=ENTRADA&idcategoria
+[2025-04-04T23:54:39.290Z] [INFO] Consulta realizada: 0 registros encontrados.
+[2025-04-04T23:54:39.291Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:45.064Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=SAIDA&idcategoria
+[2025-04-04T23:54:45.205Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:54:45.207Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:53.115Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=1
+[2025-04-04T23:54:53.260Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:54:53.261Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:54:56.512Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=2
+[2025-04-04T23:54:56.653Z] [INFO] Consulta realizada: 0 registros encontrados.
+[2025-04-04T23:54:56.654Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:55:23.563Z] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[2025-04-04T23:55:23.704Z] [INFO] Consulta realizada: 1 registros encontrados.
+[2025-04-04T23:55:23.705Z] [ERROR] Erro no servidor: cconn is not defined
+[2025-04-04T23:58:34.959Z] [INFO] Requisição: GET /categorias/categoria?ativo=true
+[2025-04-04T23:58:35.100Z] [INFO] Consulta realizada: 2 categorias encontradas.
+[2025-04-04T23:59:02.135Z] [INFO] Requisição: GET /categorias/categoria?ativo=0
+[2025-04-04T23:59:02.136Z] [ERROR] Erro ao buscar categorias: logger.warn is not a function
+[2025-04-05T00:00:03.673Z] [INFO] Servidor rodando em http://localhost:3333
+[2025-04-05T00:00:04.105Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-05T00:00:05.987Z] [INFO] Requisição: GET /categorias/categoria?ativo=0
+[2025-04-05T00:00:06.131Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-05T00:00:09.806Z] [INFO] Requisição: GET /categorias/categoria?ativo=1
+[2025-04-05T00:00:09.807Z] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[2025-04-05T00:00:10.279Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-05T00:00:10.435Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-05T00:00:45.106Z] [INFO] Requisição: GET /categorias/categoria?ativo=true
+[2025-04-05T00:00:45.107Z] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[2025-04-05T00:00:45.522Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-05T00:00:45.660Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-05T00:00:50.078Z] [INFO] Requisição: GET /categorias/categoria?ativo=false
+[2025-04-05T00:00:50.079Z] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[2025-04-05T00:00:50.526Z] [INFO] Conexão com o banco de dados estabelecida.
+[2025-04-05T00:00:50.675Z] [INFO] Consulta realizada: 1 categorias encontradas.
+[2025-04-05T00:11:08.586Z] [INFO] Requisição: GET /componente/categoria?ativo=false
+[04/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[04/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[04/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[04/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[04/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[04/04/2025] [INFO] Requisição recebida para listar tipos.
+[04/04/2025] [INFO] Requisição: GET /componente/tipo
+[04/04/2025] [INFO] Requisição: GET /categorias/categoria?ativo=false&descricao
+[04/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[04/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[04/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[04/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[04/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[04/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[04/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[04/04/2025] [ERROR] Erro no servidor: cconn is not defined
+[04/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[04/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[04/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[04/04/2025] [INFO] Requisição: GET /componente/tipo
+[04/04/2025] [INFO] Requisição recebida para listar tipos.

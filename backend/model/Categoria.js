@@ -1,5 +1,5 @@
 class Categoria {
-    constructor(idcategoria, descricao, cor, ativo = true) {
+    constructor(idcategoria, descricao, cor, ativo) {
         this.idcategoria = idcategoria;
         this.descricao = descricao;
         this.cor = cor;

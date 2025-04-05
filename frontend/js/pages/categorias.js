@@ -56,11 +56,8 @@ function listaCategorias(dados) {
         tr.append(montaTdIcon('<i class="ph ph-pencil-simple"></i>', "colunaIcone", 'Editar'));
         tr.append(montaTdIcon('<i class="ph ph-trash"></i>', "colunaIcone", 'Excluir'));
 
-
         lista.append(tr);
     }
-
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {

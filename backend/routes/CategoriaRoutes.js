@@ -1,7 +1,10 @@
-const categoriaRoutes = require("../routes/CategoriaRoutes.js");
+const express = require("express");
+const router = express.Router();
 
-module.exports = (app) => {
-    app.post("/categoria", categoriaRoutes.post);
-    app.put("/categoria/:id", categoriaRoutes.put);
-    app.get("/categoria", categoriaRoutes.get);
-}
+const categoriaController = require("../controller/categoriaController.js");
+
+router.post("/categoria", categoriaController.post);
+router.put("/categoria", categoriaController.put);
+router.get("/categoria", categoriaController.get);
+
+module.exports = router;

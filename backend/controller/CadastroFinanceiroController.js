@@ -1,0 +1,119 @@
+const logger = require("../logger/logger");
+const Financeiro = require("../model/Financeiro");
+const connect = require("../conexao/Conexao"); 
+
+exports.post = async (req, res, next) => {
+    try {
+        const { descricao, data, idcategoria, tipo, valor} = req.body;
+
+        if (!descricao || !data || !idcategoria || !tipo || valor === undefined) {
+            logger.warning("Tentativa de inserção com valores inválidos.");
+            return res.status(400).json({ error: "Descrição, data, idcategoria, tipo e valor são obrigatórios." });
+        }
+
+        const financeiro = new Financeiro(null, descricao, data, idcategoria, tipo, valor);
+
+        const conn = await connect.getConnection();
+        const sql = "INSERT INTO fn_financeiro (descricao, data, idcategoria, tipo, valor) VALUES (?, ?, ?, ?, ?)";
+        const values = [financeiro.descricao, financeiro.data, financeiro.idcategoria, financeiro.tipo, financeiro.valor];
+        await conn.query(sql, values);
+        logger.info(`financeiro criada: ${JSON.stringify(financeiro)}`);
+
+        res.status(201).send("OK");
+    } catch (error) {
+        logger.error(`Erro ao inserir financeiro: ${error.message}`);
+        res.status(500).json({ error: "Erro interno ao inserir financeiro" });
+    }finally {
+        if (conn) conn.end(); 
+    }
+};
+
+exports.put = async (req, res, next) => {
+    try {
+        const {idfinanceiro, descricao, data, idcategoria, tipo, valor} = req.body;
+
+        if (!idfinanceiro || !descricao || !data || !idcategoria || !tipo || valor === undefined) {
+            logger.warning("Tentativa de atualização com valores inválidos.");
+            return res.status(400).json({ error: "idfinanceiro, descrição, data, idcategoria, tipo e valor são obrigatórios." });
+        }
+
+        const financeiro = new Financeiro(idfinanceiro, descricao, data, idfinanceiro, tipo, valor, new Date());
+
+        const conn = await connect.getConnection();
+        const sql = "UPDATE fn_financeiro SET descricao = ?, data = ?, idcategoria = ?, tipo = ?, valor = ?, dataalteracao = ? WHERE idfinanceiro = ?";
+        const values = [financeiro.descricao, financeiro.data, financeiro.idcategoria, financeiro.tipo, financeiro.valor, financeiro.dataalteracao, financeiro.idfinanceiro];
+
+        await conn.query(sql, values);
+        logger.info(`financeiro atualizada: ${JSON.stringify(financeiro)}`);
+
+        res.status(200).send("OK");
+    } catch (error) {
+        logger.error(`Erro ao atualizar financeiro ${req.params.id}: ${error.message}`);
+        res.status(500).json({ error: "Erro interno ao atualizar financeiro" });
+    }finally {
+        if (conn) conn.end(); 
+    }
+};
+
+exports.get = async (req, res, next) => {
+    try {
+        const {
+            descricao,
+            datainicio,
+            datafinal,
+            tipo,
+            idcategoria
+        } = req.query;
+
+        let sql = "SELECT * FROM fn_financeiro WHERE 1=1";
+        const params = [];
+
+        if (descricao) {
+            sql += " AND descricao LIKE ?";
+            params.push(`%${descricao}%`);
+        }
+
+        if (datainicio) {
+            sql += " AND data >= ?";
+            params.push(datainicio);
+        }
+
+        if (datafinal) {
+            sql += " AND data <= ?";
+            params.push(datafinal);
+        }
+
+        if (tipo) {
+            sql += " AND tipo = ?";
+            params.push(tipo);
+        }
+
+        if (idcategoria) {
+            sql += " AND idcategoria = ?";
+            params.push(idcategoria);
+        }
+        conn = await connect.getConnection();
+        const [rows] = await conn.query(sql, params);
+
+        const financeiro = rows.map(row =>
+            new Financeiro(
+                row.idfinanceiro,
+                row.descricao,
+                row.data,
+                row.idcategoria,
+                row.tipo,
+                row.valor,
+                row.dataalteracao
+            )
+        );
+
+        logger.info(`Consulta realizada: ${financeiro.length} registros encontrados.`);
+        res.status(200).json(financeiro);
+    } catch (error) {
+        logger.error(`Erro ao buscar registros: ${error.message}`);
+        res.status(500).json({ error: "Erro interno ao buscar registros" });
+    } finally {
+        if (conn) cconn.end();
+    }
+};
+

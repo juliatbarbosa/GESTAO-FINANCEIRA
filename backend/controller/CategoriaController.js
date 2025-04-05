@@ -1,25 +1,7 @@
-const logger = require("../logger");
-const mysql = require("mysql2/promise");
+const logger = require("../logger/logger");
 const Categoria = require("../model/Categoria");
+const connect = require("../conexao/Conexao"); 
 
-// Conexão com o banco
-async function connect() {
-    if (global.connection && global.connection.state !== "disconnect") {
-        return global.connection;
-    }
-
-    const connection = await mysql.createConnection({
-        host: '54.91.193.137',
-        user: 'libertas',
-        password: '123456',
-        database: 'libertas5per'
-    });
-
-    global.connection = connection;
-    return connection;
-}
-
-// Criar uma nova categoria
 exports.post = async (req, res, next) => {
     try {
         const { descricao, cor, ativo } = req.body;
@@ -29,10 +11,9 @@ exports.post = async (req, res, next) => {
             return res.status(400).json({ error: "Descrição, cor e ativo são obrigatórios." });
         }
 
-        // Criando objeto Categoria
         const categoria = new Categoria(null, descricao, cor, ativo);
 
-        const conn = await connect();
+        const conn = await connect.getConnection();
         const sql = "INSERT INTO fn_categoria (descricao, cor, ativo) VALUES (?, ?, ?)";
         const values = [categoria.descricao, categoria.cor, categoria.ativo];
 
@@ -43,24 +24,23 @@ exports.post = async (req, res, next) => {
     } catch (error) {
         logger.error(`Erro ao inserir categoria: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao inserir categoria" });
+    }finally {
+        if (conn) conn.end(); 
     }
 };
 
-// Atualizar uma categoria existente
 exports.put = async (req, res, next) => {
     try {
-        const { descricao, cor, ativo } = req.body;
-        const { id } = req.params;
+        const {idcategoria, descricao, cor, ativo } = req.body;
 
-        if (!id || !descricao || !cor || ativo === undefined) {
+        if (!idcategoria || !descricao || !cor || ativo === undefined) {
             logger.warning("Tentativa de atualização com valores inválidos.");
-            return res.status(400).json({ error: "ID, descrição, cor e ativo são obrigatórios." });
+            return res.status(400).json({ error: "idcategoria, descrição, cor e ativo são obrigatórios." });
         }
 
-        // Criando objeto Categoria
-        const categoria = new Categoria(id, descricao, cor, ativo);
+        const categoria = new Categoria(idcategoria, descricao, cor, ativo);
 
-        const conn = await connect();
+        const conn = await connect.getConnection();
         const sql = "UPDATE fn_categoria SET descricao = ?, cor = ?, ativo = ? WHERE idcategoria = ?";
         const values = [categoria.descricao, categoria.cor, categoria.ativo, categoria.idcategoria];
 
@@ -71,21 +51,43 @@ exports.put = async (req, res, next) => {
     } catch (error) {
         logger.error(`Erro ao atualizar categoria ${req.params.id}: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao atualizar categoria" });
+    }finally {
+        if (conn) conn.end(); 
     }
 };
 
-// Buscar todas as categorias
 exports.get = async (req, res, next) => {
+    let conn;
     try {
-        const conn = await connect();
-        const [rows] = await conn.query("SELECT * FROM fn_categoria");
+        conn = await connect.getConnection();
 
-        const categorias = rows.map(row => new Categoria(row.idcategoria, row.descricao, row.cor, row.ativo));
+        const { ativo, descricao } = req.query;
+        let sql = "SELECT * FROM fn_categoria WHERE 1=1";
+        const params = [];
+
+        if (ativo !== undefined) {
+            sql += " AND ativo = ?";
+            params.push(ativo === "true" ? 1 : 0);
+        }
+
+        if (descricao) {
+            sql += " AND descricao LIKE ?";
+            params.push(`%${descricao}%`);
+        }
+
+        const [rows] = await conn.query(sql, params);
+
+        const categorias = rows.map(row =>
+            new Categoria(row.idcategoria, row.descricao, row.cor, row.ativo)
+        );
 
         logger.info(`Consulta realizada: ${categorias.length} categorias encontradas.`);
         res.status(200).json(categorias);
     } catch (error) {
         logger.error(`Erro ao buscar categorias: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao buscar categorias" });
+    } finally {
+        if (conn) conn.end();
     }
 };
+
