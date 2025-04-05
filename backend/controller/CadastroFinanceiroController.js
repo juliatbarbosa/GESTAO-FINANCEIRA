@@ -172,7 +172,7 @@ exports.get = async (req, res, next) => {
         const [rows] = await conn.query(sql, params);
 
         logger.info(`Consulta realizada: ${rows.length} registros encontrados.`);
-        res.status(200).json(rows);
+        res.status(200).json(rows[0].message);
     } catch (error) {
         logger.error(`Erro ao buscar registros: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao buscar registros" });
