@@ -1609,3 +1609,322 @@
 [05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
 [05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
 [05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro1
+[05/04/2025] [ERROR] Erro interno, idfinanceiro obrigatório
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 2 registros encontrados.
+[05/04/2025] [ERROR] Erro ao buscar registros: Cannot set headers after they are sent to the client
+[05/04/2025] [ERROR] Erro no servidor: Cannot set headers after they are sent to the client
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [ERROR] Erro interno, idfinanceiro obrigatório
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [ERROR] Erro ao buscar registros: Cannot set headers after they are sent to the client
+[05/04/2025] [INFO] Consulta realizada: 2 registros encontrados.
+[05/04/2025] [ERROR] Erro no servidor: Cannot set headers after they are sent to the client
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro1
+[05/04/2025] [ERROR] Erro interno, idfinanceiro obrigatório
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 2 registros encontrados.
+[05/04/2025] [ERROR] Erro ao buscar registros: Cannot set headers after they are sent to the client
+[05/04/2025] [ERROR] Erro no servidor: Cannot set headers after they are sent to the client
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: PUT /medicamento/1
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: PUT /medicamento/1
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Requisição: PUT /financeiro/financeiro
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] financeiro atualizada: {"idfinanceiro":1,"descricao":"internet","data":"2025-04-06","idcategoria":1,"tipo":"SAIDA","valor":"120.00","dataalteracao":"2025-04-05T21:23:43.462Z"}
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiroeditar?idfinanceiro=1
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Requisição: PUT /financeiro/financeiro
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] financeiro atualizada: {"idfinanceiro":1,"descricao":"internet","data":"2025-04-06","idcategoria":1,"tipo":"SAIDA","valor":"130.00","dataalteracao":"2025-04-05T21:25:25.601Z"}
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.
+[05/04/2025] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025] [INFO] Requisição: GET /css/style.css
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025] [INFO] Requisição: GET /img/logo.png
+[05/04/2025] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025] [INFO] Requisição: GET /js/utils.js
+[05/04/2025] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[05/04/2025] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025] [INFO] Requisição: GET /componente/tipo
+[05/04/2025] [INFO] Requisição recebida para listar tipos.
+[05/04/2025] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025] [INFO] Consulta realizada: 1 registros encontrados.

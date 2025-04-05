@@ -42,7 +42,7 @@
                     <span>Gerencie e organize suas transações.</span>
                 </div>
                 <div class="botoes">
-                    <div class="btnPadrao" id="btnNovaTransacao" onclick="novoCadastro()" data-bs-toggle="modal"
+                    <div class="btnPadrao" id="btnNovaTransacao" onclick="novaTransacao()" data-bs-toggle="modal"
                     data-bs-target="#modal">
                         <i class="ph ph-plus"></i>
                         Nova transação
@@ -57,7 +57,7 @@
                         <i class="ph ph-arrow-circle-up up"></i>
                     </div>
 
-                    <div class="cardBaixo">R$ 1.200,00</div>
+                    <div class="cardBaixo" id="valorEntradas">R$ 0,00</div>
                 </div>
                 <div class="cardFora">
                     <div class="cardCima">
@@ -65,7 +65,7 @@
                         <i class="ph ph-arrow-circle-down down"></i>
                     </div>
 
-                    <div class="cardBaixo">R$ 1.200,00</div>
+                    <div class="cardBaixo" id="valorSaidas">R$ 0,00</div>
                 </div>
                 <div class="cardFora">
                     <div class="cardCima">
@@ -73,7 +73,7 @@
                         <i class="ph ph-currency-dollar"></i>
                     </div>
 
-                    <div class="cardBaixo">R$ 1.200,00</div>
+                    <div class="cardBaixo" id="valorTotal">R$ 0,00</div>
                 </div>
             </div>
 
@@ -96,7 +96,6 @@
                             <th>Valor</th>
                             <th>Categoria</th>
                             <th class="colunaIcone"></th>
-                            <th class="colunaIcone"></th>
                         </tr>
                     </thead>
                     <tbody id="listaTransacoes"></tbody>
@@ -105,7 +104,6 @@
         </div>
     </div>
 
-    <!-- MODAL CADASTRO -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -115,34 +113,37 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="inputnome">Nome</label>
-                        <input id="inputnome" type="text" class="form-control" required autocomplete="off">
+                        <label for="inputdescricao">Descrição</label>
+                        <input id="inputdescricao" type="text" class="form-control" required autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <label for="inputquantidade">Quantidade</label>
-                        <input id="inputquantidade" type="number" class="form-control" required autocomplete="off">
+                        <label for="inputdata">Data</label>
+                        <input id="inputdata" type="date" class="form-control" required autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="inputtipo">Tipo</label>
-                        <input id="inputtipo" type="text" class="form-control" required autocomplete="off">
+                        <select id="inputtipo" class="form-control" required autocomplete="off"></select>
                     </div>
                     <div class="form-group">
-                        <label for="inputfabricante">Fabricante</label>
-                        <input id="inputfabricante" type="text" class="form-control" required autocomplete="off">
+                        <label for="inputcategoria">Categoria</label>
+                        <select id="inputcategoria" class="form-control" required autocomplete="off"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputvalor">Valor</label>
+                        <input id="inputvalor" type="text" class="form-control" required autocomplete="off">
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" id="cancelarCadastro" class="btn btn-outline"
+                    <button type="button" id="cancelar" class="btnPadraoSecundario"
                         data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="salvarCadastro" class="btnPadrao">Salvar</button>
+                    <button type="button" id="salvar" class="btnPadrao">Salvar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL EXCLUIR CADASTRO -->
-    <div class="modal fade" id="excluirCadastro" tabindex="-1" role="dialog" aria-labelledby="excluirCadastro"
+    <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="excluir"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -150,7 +151,7 @@
                     <h5 class="modal-title" id="tituloExcluir">Excluir</h5>
                 </div>
                 <div class="modal-body" id="bodyExcluir">
-                    Deseja excluir esse cadastro?
+                    Deseja excluir essa transação?
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="naoExcluir" class="btn btn-outline" data-dismiss="modal">Não</button>
@@ -173,6 +174,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/servidor.js"></script>
+    <script src="../js/servidorcomponentes.js"></script>
     <script src="../js/utils.js"></script>
     <script src="../js/pages/transacoes.js"></script>
 </body>

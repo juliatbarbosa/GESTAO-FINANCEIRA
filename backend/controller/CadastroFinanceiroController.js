@@ -19,7 +19,7 @@ exports.post = async (req, res, next) => {
         await conn.query(sql, values);
         logger.info(`financeiro criada: ${JSON.stringify(financeiro)}`);
 
-        res.status(201).send("OK");
+        res.status(200).json({"message": "ok" });
     } catch (error) {
         logger.error(`Erro ao inserir financeiro: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao inserir financeiro" });
@@ -46,7 +46,7 @@ exports.put = async (req, res, next) => {
         await conn.query(sql, values);
         logger.info(`financeiro atualizada: ${JSON.stringify(financeiro)}`);
 
-        res.status(200).send("OK");
+        res.status(200).json({"message": "ok" });
     } catch (error) {
         logger.error(`Erro ao atualizar financeiro ${req.params.id}: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao atualizar financeiro" });
@@ -88,7 +88,7 @@ exports.getById = async (req, res, next) => {
         );
 
         logger.info(`Consulta realizada: ${financeiro.length} registros encontrados.`);
-        res.status(200).json(financeiro);
+        res.status(200).json(financeiro[0]);
     } catch (error) {
         logger.error(`Erro ao buscar registros: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao buscar registros" });
@@ -147,7 +147,8 @@ exports.get = async (req, res, next) => {
             SELECT 
                 SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
                 SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida,
-                SUM(valor) AS total_geral
+                SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) -
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_geral
             FROM tab
         )
         SELECT JSON_OBJECT(

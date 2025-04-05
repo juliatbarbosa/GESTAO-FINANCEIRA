@@ -1,3 +1,13 @@
+:root {
+
+    --fundo: #0C0E12;
+    --cinza_escuro: #22262F;
+	--cinza: #E9EAEB;
+	--fonte: #717680;
+	--shadow: 0 1px 2px 0 rgb(0 0 0/ 0.05);
+	--error: #7F1D1D;
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -10,7 +20,7 @@
 }
 
 body {
-    background-color: #0C0E12 !important;
+    background-color: var(--fundo) !important;
     font-family: "montesserrat" !important;
     overflow: hidden;
 }
@@ -48,7 +58,7 @@ input {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #22262F;
+    background-color: var(--cinza_escuro);
     border: 3px solid transparent;
     border-radius: 10px;
     background-clip: padding-box;
@@ -114,14 +124,14 @@ input {
 }
 
 .menu .active {
-    background-color: #22262F;
+    background-color: var(--cinza_escuro);
 }
 
 .tela {
     width: 100%;
     margin-top: 10px;
-    border-left: 1px solid #22262F;
-    border-top: 1px solid #22262F;
+    border-left: 1px solid var(--cinza_escuro);
+    border-top: 1px solid var(--cinza_escuro);
     border-top-left-radius: 40px;
     padding: 30px;
     overflow-y: auto;
@@ -149,7 +159,7 @@ input {
 
 .btnPadrao {
     background-color: #00875f;
-    color: #E1E1E6;
+    color: white;
     border: none;
     padding: 10px 14px;
     border-radius: 8px;
@@ -165,6 +175,27 @@ input {
 
 .btnPadrao:hover {
     background-color: #005C41;
+}
+
+.btnPadraoSecundario {
+    background-color: transparent;
+    color: #00875f;
+    border: 1px solid #00875f;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.btnPadraoSecundario:hover {
+    color: #005C41;
+    border: 1px solid #005C41;
 }
 
 .btnPadrao .ph {
@@ -184,7 +215,7 @@ input {
     height: 150px;
     border-radius: 12px;
     color: white;
-    border: 1px solid #22262F;
+    border: 1px solid var(--cinza_escuro);
     box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
     background-color: #13161b;
 }
@@ -216,9 +247,9 @@ input {
 
 .cardBaixo {
     height: 100px;
-    border: 1px solid #22262F;
+    border: 1px solid var(--cinza_escuro);
     border-radius: 12px;
-    background-color: #0C0E12;
+    background-color: var(--fundo);
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -243,9 +274,8 @@ input {
 
 #pesquisa {
     font-size: 14px !important;
-    border: 1px solid #22262F;
+    border: 1px solid var(--cinza_escuro);
     border-radius: 10px;
-    padding: 10px;
     width: 100%;
 }
 
@@ -253,7 +283,7 @@ input {
     font-size: 14px !important;
     color: #85888E !important;
     background-color: transparent !important;
-    border: none;
+    border: none !important;
     font-family: "montesserrat";
 }
 
@@ -282,7 +312,7 @@ input {
     width: 100%;
     position: relative;
     margin-bottom: 20px;
-    border: 1px solid #22262F;
+    border: 1px solid var(--cinza_escuro);
 }
 
 table {
@@ -360,7 +390,7 @@ table thead th {
 }
 
 table tbody tr {
-    border-bottom: 1px solid #22262F;
+    border-bottom: 1px solid var(--cinza_escuro);
 }
 
 table tbody tr:last-child {
@@ -372,7 +402,7 @@ table tbody td {
 }
 
 table tfoot {
-    border-top: 1px solid #22262F;
+    border-top: 1px solid var(--cinza_escuro);
 }
 
 table tfoot th {
@@ -383,7 +413,7 @@ table .cabecalho {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 10px;
-    border-bottom: 1px solid #22262F;
+    border-bottom: 1px solid var(--cinza_escuro);
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -473,7 +503,7 @@ table .categoria {
 }
 
 .modal-content {
-	/* background-color: #22262F !important; */
+	background-color: #202024 !important;
 }
 
 .modal label,
@@ -492,56 +522,6 @@ table .categoria {
 #tituloModal,
 #tituloExcluir {
 	font-size: 16px !important;
-}
-
-#salvarCadastro {
-	background-color: var(--primaria-700) !important;
-	color: white !important;
-	font-size: 14px !important;
-	font-weight: 600 !important;
-}
-
-#salvarCadastro:hover {
-	background-color: var(--primaria-800) !important;
-	transition: all ease 0.2s !important;
-}
-
-#cancelarCadastro {
-	border: 1px solid var(--primaria-700) !important;
-	color: var(--primaria-700) !important;
-	font-size: 14px !important;
-	font-weight: 600 !important;
-}
-
-#cancelarCadastro:hover {
-	border: 1px solid var(--primaria-800) !important;
-	color: var(--primaria-800) !important;
-}
-
-#simExcluir {
-	background-color: var(--primaria-700) !important;
-	color: white !important;
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	width: 100px !important;
-}
-
-#simExcluir:hover {
-	background-color: var(--primaria-800) !important;
-	transition: all ease 0.2s !important;
-}
-
-#naoExcluir {
-	border: 1px solid var(--primaria-700) !important;
-	color: var(--primaria-700) !important;
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	width: 100px !important;
-}
-
-#naoExcluir:hover {
-	border: 1px solid var(--primaria-800) !important;
-	color: var(--primaria-800) !important;
 }
 
 #bodyExcluir {
