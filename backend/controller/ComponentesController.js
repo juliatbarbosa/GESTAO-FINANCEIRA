@@ -1,14 +1,15 @@
-const categoriaController = require("../controller/categoriaController.js");
+const categoriaController = require("../controller/CategoriaController.js");
 const Tipo = require("../model/Tipo");
 const logger = require("../logger/logger.js");
+const Response = require("../model/Response");
 
 exports.getCategoria = async (req, res, next) => {
     try {
         logger.info("Requisição recebida para listar categorias (via ComponentesController).");
-        return await categoriaController.get(req, res, next);
+        await categoriaController.get(req, res, next);
     } catch (error) {
         logger.error(`Erro ao buscar categorias via ComponentesController: ${error.message}`);
-        return res.status(500).json({ error: "Erro ao buscar categorias" });
+        res.status(500).json(new Response(false, "Erro interno ao buscar categorias"));
     }
 };
 
@@ -16,9 +17,9 @@ exports.getTipo = async (req, res) => {
     try {
         const tipos = Object.values(Tipo);
         logger.info("Requisição recebida para listar tipos.");
-        res.status(200).json(tipos);
+        res.status(200).json(new Response(true, tipos));
     } catch (error) {
         logger.error(`Erro ao buscar tipos: ${error.message}`);
-        res.status(500).json({ error: "Erro ao buscar tipos" });
+        res.status(500).json(new Response(false, "Erro interno ao buscar tipos"));
     }
 };

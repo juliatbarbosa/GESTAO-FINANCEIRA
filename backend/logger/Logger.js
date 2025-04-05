@@ -16,7 +16,8 @@ class Logger {
     }
 
     log(message, level) {
-        const entrada = `[${new Date().toLocaleDateString('pt-BR')}] [${level}] ${message}`;
+        const entrada = `[${new Date().toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })}] [${level}] ${message}`;
+
         this.logs.push(entrada);
         console.log(entrada);
         this.registraLog(entrada);

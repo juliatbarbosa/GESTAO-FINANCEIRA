@@ -1,6 +1,7 @@
 const logger = require("../logger/logger");
 const Categoria = require("../model/Categoria");
 const connect = require("../conexao/Conexao"); 
+const Response = require("../model/Response");
 
 exports.post = async (req, res, next) => {
     try {
@@ -8,7 +9,7 @@ exports.post = async (req, res, next) => {
 
         if (!descricao || !cor || ativo === undefined) {
             logger.warning("Tentativa de inserção com valores inválidos.");
-            return res.status(400).json({ error: "Descrição, cor e ativo são obrigatórios." });
+            return res.status(400).json(new Response(false, "Descrição, cor e ativo são obrigatórios."));
         }
 
         const categoria = new Categoria(null, descricao, cor, ativo);
@@ -20,10 +21,10 @@ exports.post = async (req, res, next) => {
         await conn.query(sql, values);
         logger.info(`Categoria criada: ${JSON.stringify(categoria)}`);
 
-        res.status(201).send("OK");
+        res.status(201).send(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao inserir categoria: ${error.message}`);
-        res.status(500).json({ error: "Erro interno ao inserir categoria" });
+        res.status(500).json(new Response(false, "Erro interno ao inserir categoria"));
     }finally {
         if (conn) conn.end(); 
     }
@@ -35,7 +36,7 @@ exports.put = async (req, res, next) => {
 
         if (!idcategoria || !descricao || !cor || ativo === undefined) {
             logger.warning("Tentativa de atualização com valores inválidos.");
-            return res.status(400).json({ error: "idcategoria, descrição, cor e ativo são obrigatórios." });
+            return res.status(400).json(new Response(false, "idcategoria, descrição, cor e ativo são obrigatórios."));
         }
 
         const categoria = new Categoria(idcategoria, descricao, cor, ativo);
@@ -47,10 +48,10 @@ exports.put = async (req, res, next) => {
         await conn.query(sql, values);
         logger.info(`Categoria atualizada: ${JSON.stringify(categoria)}`);
 
-        res.status(200).send("OK");
+        res.status(200).send(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao atualizar categoria ${req.params.id}: ${error.message}`);
-        res.status(500).json({ error: "Erro interno ao atualizar categoria" });
+        res.status(500).json(new Response(false, "Erro interno ao atualizar categoria"));
     }finally {
         if (conn) conn.end(); 
     }
@@ -67,7 +68,7 @@ exports.get = async (req, res, next) => {
 
         if (ativo !== undefined) {
             sql += " AND ativo = ?";
-            params.push(ativo === "true" ? 1 : 0);
+            params.push(ativo === "true" || ativo === "1" ? 1 : 0);
         }
 
         if (descricao) {
@@ -82,10 +83,10 @@ exports.get = async (req, res, next) => {
         );
 
         logger.info(`Consulta realizada: ${categorias.length} categorias encontradas.`);
-        res.status(200).json(categorias);
-    } catch (error) {
+        res.status(200).json(new Response(true, categorias));
+    } catch (error) {   
         logger.error(`Erro ao buscar categorias: ${error.message}`);
-        res.status(500).json({ error: "Erro interno ao buscar categorias" });
+        res.status(500).json(new Response(false, "Erro interno ao buscar categorias"));
     } finally {
         if (conn) conn.end();
     }
