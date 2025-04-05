@@ -1,10 +1,10 @@
 const logger = require("../logger/logger");
 const Financeiro = require("../model/Financeiro");
-const connect = require("../conexao/Conexao"); 
+const connect = require("../conexao/Conexao");
 
 exports.post = async (req, res, next) => {
     try {
-        const { descricao, data, idcategoria, tipo, valor} = req.body;
+        const { descricao, data, idcategoria, tipo, valor } = req.body;
 
         if (!descricao || !data || !idcategoria || !tipo || valor === undefined) {
             logger.warning("Tentativa de inserção com valores inválidos.");
@@ -23,14 +23,14 @@ exports.post = async (req, res, next) => {
     } catch (error) {
         logger.error(`Erro ao inserir financeiro: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao inserir financeiro" });
-    }finally {
-        if (conn) conn.end(); 
+    } finally {
+        if (conn) conn.end();
     }
 };
 
 exports.put = async (req, res, next) => {
     try {
-        const {idfinanceiro, descricao, data, idcategoria, tipo, valor} = req.body;
+        const { idfinanceiro, descricao, data, idcategoria, tipo, valor } = req.body;
 
         if (!idfinanceiro || !descricao || !data || !idcategoria || !tipo || valor === undefined) {
             logger.warning("Tentativa de atualização com valores inválidos.");
@@ -50,8 +50,8 @@ exports.put = async (req, res, next) => {
     } catch (error) {
         logger.error(`Erro ao atualizar financeiro ${req.params.id}: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao atualizar financeiro" });
-    }finally {
-        if (conn) conn.end(); 
+    } finally {
+        if (conn) conn.end();
     }
 };
 
@@ -67,7 +67,7 @@ exports.getById = async (req, res, next) => {
         if (idfinanceiro) {
             sql += " AND idfinanceiro = ?";
             params.push(idfinanceiro);
-        }else{
+        } else {
             logger.error(`Erro interno, idfinanceiro obrigatório`);
             res.status(404).json({ error: "Erro interno, idfinanceiro obrigatório" });
         }
@@ -137,7 +137,7 @@ exports.get = async (req, res, next) => {
 
         let sql = `WITH tab AS (
             SELECT ff.\`data\`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
-                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
             FROM fn_financeiro ff 
             INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
             WHERE 1=1 ` + filtros + `
@@ -159,7 +159,8 @@ exports.get = async (req, res, next) => {
                 'idfinanceiro', tab.idfinanceiro,
                 'tipo', tab.tipo,
                 'valor', tab.valor,
-                'desc_categoria', tab.desc_categoria
+                'desc_categoria', tab.desc_categoria,
+                'cor_categoria', tab.cor
             )),
             'total_entrada', tab_total.total_entrada,
             'total_saida', tab_total.total_saida,
@@ -172,7 +173,7 @@ exports.get = async (req, res, next) => {
         const [rows] = await conn.query(sql, params);
 
         logger.info(`Consulta realizada: ${rows.length} registros encontrados.`);
-        res.status(200).json(rows[0].message);
+        res.status(200).json(JSON.parse(rows[0].message));
     } catch (error) {
         logger.error(`Erro ao buscar registros: ${error.message}`);
         res.status(500).json({ error: "Erro interno ao buscar registros" });
