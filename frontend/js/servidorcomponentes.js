@@ -7,7 +7,7 @@ function getListaCategorias() {
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => selectCategorias(dados))
+        .then(dados => selectCategorias(dados.message))
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             getListaTipos()
@@ -22,7 +22,7 @@ function getListaTipos() {
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => selectTipos(dados))
+        .then(dados => selectTipos(dados.message))
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             getTransacoes()

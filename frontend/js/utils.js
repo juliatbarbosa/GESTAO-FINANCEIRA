@@ -64,3 +64,8 @@ function validarInputs(...inputs) {
 
     return !temErro;
 }
+
+function desformataData(data) {
+    const dataFormatada = moment(data).format('YYYY-MM-DD');;
+    return dataFormatada;
+}

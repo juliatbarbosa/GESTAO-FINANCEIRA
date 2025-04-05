@@ -84,7 +84,7 @@
                     </div>
                     <i id="imgPesquisa" class="ph ph-magnifying-glass"></i>
                 </div>
-                <i id="imgFunil" class="ph ph-funnel"></i>
+                <i id="imgFunil" class="ph ph-funnel click" data-bs-toggle="modal" data-bs-target="#modalFiltro"></i>
             </div>
 
             <div class="tabela">
@@ -143,23 +143,54 @@
         </div>
     </div>
 
-    <div class="modal fade" id="excluir" tabindex="-1" role="dialog" aria-labelledby="excluir"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="modalFiltro" tabindex="-1" aria-labelledby="modalFiltroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <form id="formFiltro">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tituloExcluir">Excluir</h5>
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalFiltroLabel">Filtros</h5>
+                <i class="ph ph-x click"></i>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="descricao" class="form-label">Descrição</label>
+                  <input type="text" class="form-control" id="descricao" name="descricao">
                 </div>
-                <div class="modal-body" id="bodyExcluir">
-                    Deseja excluir essa transação?
+                <div class="mb-3">
+                  <label for="datainicio" class="form-label">Data Início</label>
+                  <input type="date" class="form-control" id="datainicio" name="datainicio">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" id="naoExcluir" class="btn btn-outline" data-dismiss="modal">Não</button>
-                    <button type="button" id="simExcluir" class="btn">Sim</button>
+                <div class="mb-3">
+                  <label for="datafinal" class="form-label">Data Final</label>
+                  <input type="date" class="form-control" id="datafinal" name="datafinal">
                 </div>
+                <div class="mb-3">
+                  <label for="tipo" class="form-label">Tipo</label>
+                  <select class="form-select" id="tipo" name="tipo">
+                    <option value="">Todos</option>
+                    <option value="ENTRADA">Entrada</option>
+                    <option value="SAIDA">Saída</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="idcategoria" class="form-label">Categoria</label>
+                  <select class="form-select" id="idcategoria" name="idcategoria">
+                    <option value="">Todas</option>
+                    <!-- Adicione dinamicamente as categorias aqui -->
+                    <option value="1">Alimentação</option>
+                    <option value="2">Transporte</option>
+                    <option value="3">Lazer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+                <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
+              </div>
             </div>
+          </form>
         </div>
-    </div>
+      </div>
 
     <!-- TOAST -->
     <div id="toast" class="toast align-items-center border-0 position-fixed bottom-0 end-0 m-3" role="alert"
@@ -173,6 +204,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/servidor.js"></script>
     <script src="../js/servidorcomponentes.js"></script>
     <script src="../js/utils.js"></script>

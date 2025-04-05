@@ -1,7 +1,6 @@
 var modal = new bootstrap.Modal(document.getElementById('modal'));
-var modalExcluir = new bootstrap.Modal(document.getElementById('excluir'));
 var modalToast = new bootstrap.Toast(document.getElementById('toast'));
-
+var modalFiltro = new bootstrap.Toast(document.getElementById('modalFiltro'));
 
 function init() {
     getListaCategorias()
@@ -10,12 +9,18 @@ function init() {
         fecharModal()
     }
 
-    document.querySelector('#naoExcluir').onclick = function () {
-        modalExcluir.hide()
-    }
 
     document.querySelector("#btnNovaTransacao").addEventListener("click", () => {
         document.querySelector('.modal').style.display = "block";
+    });
+
+    $('#inputvalor').on('input', function () {
+        let valor = $(this).val().replace(/\D/g, ''); // remove tudo que não é número
+        valor = (parseFloat(valor) / 100).toFixed(2); // divide por 100 e fixa 2 casas
+        valor = valor
+            .replace('.', ',') // troca ponto por vírgula
+            .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // adiciona ponto como separador de milhar
+        $(this).val(valor);
     });
 }
 
@@ -27,13 +32,13 @@ function listaTransacoes(dados) {
     var lista = document.getElementById("listaTransacoes");
     lista.innerHTML = "";
 
-    document.querySelector('#valorEntradas').innerHTML = "R$ " + (dados.total_entrada == null ? "0,00" : formataMoeda(dados.total_entrada));
-    document.querySelector('#valorSaidas').innerHTML = "R$ " + (dados.total_saida == null ? "0,00" : formataMoeda(dados.total_saida));
-    document.querySelector('#valorTotal').innerHTML = "R$ " + (dados.total_geral == null ? "0,00" : formataMoeda(dados.total_geral));
+    document.querySelector('#valorEntradas').innerHTML = "R$ " + (dados.total_entrada == null ? "0,00" : formataMoeda(Number(dados.total_entrada)));
+    document.querySelector('#valorSaidas').innerHTML = "R$ " + (dados.total_saida == null ? "0,00" : formataMoeda(Number(dados.total_saida)));
+    document.querySelector('#valorTotal').innerHTML = "R$ " + (dados.total_geral == null ? "0,00" : formataMoeda(Number(dados.total_geral)));
 
-    if (dados.dados != null) {
+    if (dados.message != null) {
 
-        for (var dado of dados.dados) {
+        for (var dado of dados.message) {
             var tr = document.createElement("tr");
             tr.append(montaTd((dado.data == null ? "-" : formataData(dado.data)), "colunaData"));
             tr.append(montaTd((dado.desc_financeiro == null ? "-" : dado.desc_financeiro.toUpperCase()), "", "", 2));
@@ -41,15 +46,15 @@ function listaTransacoes(dados) {
             if (dado.desc_categoria != null) {
                 var desc_categoria = document.createElement("div");
                 desc_categoria.classList.add("categoria");
-                desc_categoria.style.color = dado.cor_categoria;
-                desc_categoria.style.border = "1px solid " + dado.cor_categoria;
+                desc_categoria.style.color = dado.cor;
+                desc_categoria.style.border = "1px solid " + dado.cor;
                 desc_categoria.innerText = dado.desc_categoria.toUpperCase();
 
                 tr.append(montaTdIcon(desc_categoria.outerHTML, "", ''));
             } else {
                 tr.append(montaTd("-", "", ""));
             }
-            tr.append(montaTdIcon('<i onclick="getTransacao(' + dado.idfinanceiro + ')" class="ph ph-pencil-simple"></i>', "colunaIcone", 'Editar'));
+            tr.append(montaTdIcon('<i onclick="getTransacao(' + dado.idfinanceiro + ')" class="ph ph-pencil-simple click"></i>', "colunaIcone", 'Editar'));
 
 
             lista.append(tr);
@@ -85,11 +90,12 @@ function novaTransacao() {
 }
 
 function editar(dados) {
+    console.log(dados)
     //alterar titulo
     document.querySelector('#tituloModal').innerHTML = "Alterar transação";
     // preencher campos
     document.querySelector('#inputdescricao').value = dados.descricao;
-    document.querySelector('#inputdata').value = dados.data;
+    document.querySelector('#inputdata').value = desformataData(dados.data);
     document.querySelector('#inputtipo').value = dados.tipo;
     document.querySelector('#inputcategoria').value = dados.idcategoria;
     document.querySelector('#inputvalor').value = dados.valor;
@@ -105,14 +111,6 @@ function editar(dados) {
     }
     // abrir modal
     modal.show();
-}
-
-function excluir(id) {
-    modalExcluir.show()
-    document.querySelector('#simExcluir').onclick = function () {
-        deleteTransacao(id)
-        modalExcluir.hide()
-    }
 }
 
 function salvar(id) {
@@ -150,7 +148,7 @@ function pesquisar() {
     } else if (icone.src.includes('close.png')) {
         icone.src = 'img/pesquisa.png'
         descricao.value = ''
-        getTransacoes(null)
+        getTransacoes()
     }
 }
 

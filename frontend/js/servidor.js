@@ -27,7 +27,7 @@ function getTransacao(id) {
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => editar(dados))
+        .then(dados => editar(dados.message[0]))
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             fecharLoading()
@@ -80,3 +80,84 @@ function putTransacao(obj, id) {
             getTransacoes();
         });
 }
+
+function getCategorias() {
+    abrirLoading()
+
+    fetch('http://127.0.0.1:3333/categorias/categoria'
+        + '?descricao='
+        + '&ativo=',
+        {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .then(resp => resp.json())
+        .then(dados => listaCategorias(dados))
+        .catch(err => console.error("Erro ao buscar dados:", err))
+        .finally(function () {
+            fecharLoading()
+        });
+}
+
+function getCategoria(id) {
+    abrirLoading()
+    fetch("http://127.0.0.1:3333/categorias/categoria?idcategoria=" + id,
+        {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .then(resp => resp.json())
+        .then(dados => editar(dados.message))
+        .catch(err => console.error("Erro ao buscar dados:", err))
+        .finally(function () {
+            fecharLoading()
+        });
+}
+
+function postCategoria(obj) {
+    abrirLoading()
+    let body = JSON.stringify(obj);
+    let endereco = "http://127.0.0.1:3333/categorias/categoria";
+    let metodo = "POST";
+
+    fetch(endereco,
+        {
+            method: metodo,
+            body: body,
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .then(resp => resp.json())
+        .then(function (retorno) {
+            toast(retorno.message, retorno.success);
+        })
+        .catch(err => console.error("Erro ao buscar dados:", err))
+        .finally(function () {
+            fecharModal();
+            getCategorias();
+        });
+}
+
+function putCategoria(obj, id) {
+    obj.idcategoria = id;
+    abrirLoading()
+    let body = JSON.stringify(obj);
+    let endereco = "http://127.0.0.1:3333/categorias/categoria";
+    let metodo = "PUT";
+    
+    fetch(endereco,
+        {
+            method: metodo,
+            body: body,
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .then(resp => resp.json())
+        .then(function (retorno) {
+            toast(retorno.message, retorno.success);
+        })
+        .catch(err => console.error("Erro ao buscar dados:", err))
+        .finally(function () {
+            fecharModal()
+            getCategorias();
+        });
+}
+

@@ -481,7 +481,9 @@ table .categoria {
 
 /* ######### MODAL CADASTRO E MODAL EXCLUIR ######### */
 .form-control {
-	border: 1px solid var(--cinza) !important;
+	border: 1px solid #717670 !important;
+    background-color: transparent !important;
+    color: white !important;
 }
 
 .form-control:focus {
@@ -507,11 +509,11 @@ table .categoria {
 }
 
 .modal label,
-.modal input {
+.modal input, .modal select {
 	font-size: 14px !important;
 }
 
-.modal input {
+.modal input, .modal select {
 	box-shadow: var(--shadow);
 }
 
@@ -526,4 +528,18 @@ table .categoria {
 
 #bodyExcluir {
 	font-size: 14px !important;
+}
+
+#check {
+    color: #00B37E;
+    font-size: 18px;
+}
+#nocheck {
+    color: #F75A68;
+    font-size: 18px;
+}
+
+
+.click {
+    cursor: pointer;
 }
