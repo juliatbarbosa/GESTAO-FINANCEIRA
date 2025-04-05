@@ -3088,3 +3088,250 @@
 [05/04/2025, 20:46] [WARNING] Conexão encerrada detectada, tentando reconectar...
 [05/04/2025, 20:46] [INFO] Conexão com o banco de dados estabelecida.
 [05/04/2025, 20:46] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 20:47] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025, 20:47] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 20:47] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 20:47] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 20:47] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 20:47] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 20:47] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 20:47] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025, 20:47] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025, 20:47] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 20:47] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:47] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:47] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 20:47] [INFO] Requisição: GET /componente/tipo
+[05/04/2025, 20:47] [INFO] Requisição recebida para listar tipos.
+[05/04/2025, 20:47] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:47] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:47] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:47] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:47] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:48] [INFO] Requisição: POST /financeiro/financeiro
+[05/04/2025, 20:48] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:48] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:48] [ERROR] Erro no servidor: conn is not defined
+[05/04/2025, 20:48] [ERROR] Erro ao inserir financeiro: Data truncated for column 'valor' at row 1
+[05/04/2025, 20:48] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:48] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:48] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:50] [INFO] Requisição: POST /financeiro/financeiro
+[05/04/2025, 20:50] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:50] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:50] [ERROR] Erro ao inserir financeiro: Data truncated for column 'valor' at row 1
+[05/04/2025, 20:50] [ERROR] Erro no servidor: conn is not defined
+[05/04/2025, 20:50] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:50] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:50] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:50] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025, 20:50] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:51] [INFO] Requisição: POST /financeiro/financeiro
+[05/04/2025, 20:51] [WARNING] Tentativa de inserção com valores inválidos.
+[05/04/2025, 20:51] [ERROR] Erro no servidor: conn is not defined
+[05/04/2025, 20:51] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:51] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:51] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:51] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025, 20:51] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:52] [INFO] Requisição: POST /financeiro/financeiro
+[05/04/2025, 20:52] [INFO] INSERT INTO fn_financeiro (descricao, data, idcategoria, tipo, valor) VALUES (?, ?, ?, ?, ?)
+[05/04/2025, 20:52] [INFO] Registro financeiro criado: {"idfinanceiro":null,"descricao":"111","data":"2025-04-05","idcategoria":"1","tipo":"SAIDA","valor":"51.40"}
+[05/04/2025, 20:52] [ERROR] Erro no servidor: conn is not defined
+[05/04/2025, 20:52] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:52] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:52] [INFO] Consulta realizada: 4 registros encontrados.
+[05/04/2025, 20:55] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:55] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:55] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:55] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:55] [INFO] Consulta realizada: 4 registros encontrados.
+[05/04/2025, 20:55] [INFO] Requisição: DELETE /financeiro/financeiro
+[05/04/2025, 20:55] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025, 20:55] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:55] [INFO] Requisição: DELETE /financeiro/financeiro
+[05/04/2025, 20:55] [INFO] Registro financeiro excluído: 4
+[05/04/2025, 20:55] [ERROR] Erro no servidor: conn is not defined
+[05/04/2025, 20:55] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:55] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:55] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:56] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025, 20:56] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 20:56] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 20:56] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 20:56] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 20:56] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 20:56] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 20:56] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025, 20:56] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025, 20:56] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:56] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 20:56] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:56] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 20:56] [INFO] Requisição: GET /componente/tipo
+[05/04/2025, 20:56] [INFO] Requisição recebida para listar tipos.
+[05/04/2025, 20:56] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:56] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:56] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:56] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:56] [INFO] Consulta realizada: 3 registros encontrados.

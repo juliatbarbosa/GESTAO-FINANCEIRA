@@ -3,21 +3,44 @@ const Financeiro = require("../model/Financeiro");
 const connect = require("../conexao/Conexao");
 const Response = require("../model/Response");
 
+exports.delete = async (req, res, next) => {
+    try {
+        const { idfinanceiro } = req.body;
+        if (!idfinanceiro) {
+            logger.warning("Tentativa de exclusão com valores inválidos.");
+            return res.status(400).json(new Response(false, "idfinanceiro é obrigatório."));
+        }
+
+        const conn = await connect.getConnection();
+        const sql = "DELETE FROM fn_financeiro WHERE idfinanceiro = ?";
+        const values = [idfinanceiro];
+        await conn.query(sql, values);
+        logger.info(`Registro financeiro excluído: ${idfinanceiro}`);
+        res.status(200).json(new Response(true, "ok"));
+    } catch (error) {
+        logger.error(`Erro ao excluir financeiro: ${error.message}`);
+        res.status(500).json(new Response(false, "Erro interno ao excluir financeiro"));
+    } finally {
+        if (conn) conn.end();
+    }
+};
+
 exports.post = async (req, res, next) => {
     try {
         const { descricao, data, idcategoria, tipo, valor } = req.body;
 
-        if (!descricao || !data || !idcategoria || !tipo || valor === undefined) {
+        if (!descricao || !data || !idcategoria || !tipo || !valor) {
             logger.warning("Tentativa de inserção com valores inválidos.");
             return res.status(400).json(new Response(false, "Descrição, data, idcategoria, tipo e valor são obrigatórios."));
         }
 
-        const financeiro = new Financeiro(null, descricao, data, idcategoria, tipo, valor);
+        const financeiro = new Financeiro(null, descricao, data, idcategoria, tipo, valor.replace(",", "."));
 
         const conn = await connect.getConnection();
         const sql = "INSERT INTO fn_financeiro (descricao, data, idcategoria, tipo, valor) VALUES (?, ?, ?, ?, ?)";
         const values = [financeiro.descricao, financeiro.data, financeiro.idcategoria, financeiro.tipo, financeiro.valor];
         await conn.query(sql, values);
+        logger.info(sql, values);
         logger.info(`Registro financeiro criado: ${JSON.stringify(financeiro)}`);
         res.status(200).json(new Response(true, "ok"));
     } catch (error) {
