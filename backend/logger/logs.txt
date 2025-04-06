@@ -3335,3 +3335,209 @@
 [05/04/2025, 20:56] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
 [05/04/2025, 20:56] [INFO] Conexão com o banco de dados estabelecida.
 [05/04/2025, 20:56] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:57] [INFO] Requisição: GET /pages/categorias.html
+[05/04/2025, 20:57] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 20:57] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 20:57] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 20:57] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 20:57] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 20:57] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 20:57] [INFO] Requisição: GET /js/pages/categorias.js
+[05/04/2025, 20:57] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[05/04/2025, 20:57] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:57] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:57] [INFO] Consulta realizada: 4 categorias encontradas.
+[05/04/2025, 20:58] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025, 20:58] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 20:58] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 20:58] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 20:58] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 20:58] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 20:58] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 20:58] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025, 20:58] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025, 20:58] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:58] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 20:58] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:58] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 20:58] [INFO] Requisição: GET /componente/tipo
+[05/04/2025, 20:58] [INFO] Requisição recebida para listar tipos.
+[05/04/2025, 20:58] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:58] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:58] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:58] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:58] [INFO] Consulta realizada: 3 registros encontrados.
+[05/04/2025, 20:58] [INFO] Requisição: POST /financeiro/financeiro
+[05/04/2025, 20:58] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:58] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:58] [INFO] Registro financeiro criado: {"idfinanceiro":null,"descricao":"Salario do dia 1º","data":"2025-04-01","idcategoria":"1","tipo":"ENTRADA","valor":"20.00"}
+[05/04/2025, 20:58] [INFO] INSERT INTO fn_financeiro (descricao, data, idcategoria, tipo, valor) VALUES (?, ?, ?, ?, ?)
+[05/04/2025, 20:58] [ERROR] Erro no servidor: conn is not defined
+[05/04/2025, 20:58] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:58] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data DESC
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:58] [INFO] Consulta realizada: 4 registros encontrados.
+[05/04/2025, 20:59] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025, 20:59] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:59] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025, 20:59] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 20:59] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 20:59] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 20:59] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 20:59] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 20:59] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 20:59] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025, 20:59] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025, 20:59] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 20:59] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 20:59] [INFO] Requisição: GET /componente/tipo
+[05/04/2025, 20:59] [INFO] Requisição recebida para listar tipos.
+[05/04/2025, 20:59] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 20:59] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+                ORDER BY ff.data
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+[05/04/2025, 20:59] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 20:59] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 20:59] [INFO] Consulta realizada: 4 registros encontrados.
+[05/04/2025, 21:00] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025, 21:00] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 21:00] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025, 21:00] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025, 21:00] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 21:00] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 21:00] [INFO] Requisição: GET /componente/tipo
+[05/04/2025, 21:00] [INFO] Requisição recebida para listar tipos.
+[05/04/2025, 21:00] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 21:00] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE;
+            ORDER BY tab.data DESC
+[05/04/2025, 21:00] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 21:00] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 21:00] [ERROR] Erro ao buscar registros: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY tab.data DESC' at line 20
+[05/04/2025, 21:00] [INFO] Servidor rodando em http://localhost:3333
+[05/04/2025, 21:00] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 21:00] [INFO] Requisição: GET /pages/transacoes.html
+[05/04/2025, 21:00] [INFO] Requisição: GET /css/style.css
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/framework/moment.min.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /img/logo.png
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/servidor.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/servidorcomponentes.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/utils.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /js/pages/transacoes.js
+[05/04/2025, 21:00] [INFO] Requisição: GET /componente/categoria?ativo=false
+[05/04/2025, 21:00] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 21:00] [INFO] Consulta realizada: 1 categorias encontradas.
+[05/04/2025, 21:00] [INFO] Requisição: GET /componente/tipo
+[05/04/2025, 21:00] [INFO] Requisição recebida para listar tipos.
+[05/04/2025, 21:00] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[05/04/2025, 21:00] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE
+            ORDER BY tab.data DESC;
+[05/04/2025, 21:00] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 21:00] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 21:00] [INFO] Consulta realizada: 4 registros encontrados.
+[05/04/2025, 21:03] [INFO] Requisição: GET /componente/categoria?ativo=true
+[05/04/2025, 21:03] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[05/04/2025, 21:03] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[05/04/2025, 21:03] [INFO] Conexão com o banco de dados estabelecida.
+[05/04/2025, 21:03] [INFO] Consulta realizada: 3 categorias encontradas.
