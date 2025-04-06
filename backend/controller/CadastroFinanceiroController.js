@@ -166,7 +166,6 @@ exports.get = async (req, res, next) => {
                 FROM fn_financeiro ff 
                 INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
                 WHERE 1=1 ${filtros}
-                ORDER BY ff.data DESC
             ),
             tab_total AS (
                 SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
@@ -179,7 +178,8 @@ exports.get = async (req, res, next) => {
                 tab_total.total_saida, 
                 (tab_total.total_entrada - tab_total.total_saida) AS total_geral
             FROM tab
-            JOIN tab_total ON TRUE;`;
+            JOIN tab_total ON TRUE
+            ORDER BY tab.data DESC;`;
             logger.info(sql);
 
         conn = await connect.getConnection();
