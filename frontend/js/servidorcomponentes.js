@@ -1,7 +1,7 @@
 function getListaCategorias() {
     abrirLoading()
 
-    fetch('http://127.0.0.1:3333/componente/categoria?ativo=false',
+    fetch('http://127.0.0.1:3333/componente/categoria?ativo=true',
         {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
