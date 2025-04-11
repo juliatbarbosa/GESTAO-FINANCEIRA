@@ -3802,3 +3802,57 @@
 [11/04/2025, 18:46] [WARNING] Conexão encerrada detectada, tentando reconectar...
 [11/04/2025, 18:46] [INFO] Conexão com o banco de dados estabelecida.
 [11/04/2025, 18:46] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:53] [INFO] Servidor rodando em http://localhost:3333
+[11/04/2025, 18:53] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:53] [INFO] Requisição: POST /categorias/categoria
+[11/04/2025, 18:53] [INFO] Categoria criada: {"idcategoria":null,"descricao":"teste","cor":"#000000","ativo":"false"}
+[11/04/2025, 18:53] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:53] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:53] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:53] [INFO] Consulta realizada: 5 categorias encontradas.
+[11/04/2025, 18:53] [INFO] Requisição: GET /categorias/categoria?idcategoria=5
+[11/04/2025, 18:53] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:53] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:53] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:53] [INFO] Requisição: GET /pages/transacoes.html
+[11/04/2025, 18:53] [INFO] Requisição: GET /css/style.css
+[11/04/2025, 18:53] [INFO] Requisição: GET /js/framework/moment.min.js
+[11/04/2025, 18:53] [INFO] Requisição: GET /img/logo.png
+[11/04/2025, 18:53] [INFO] Requisição: GET /js/servidor.js
+[11/04/2025, 18:53] [INFO] Requisição: GET /js/servidorcomponentes.js
+[11/04/2025, 18:53] [INFO] Requisição: GET /js/utils.js
+[11/04/2025, 18:53] [INFO] Requisição: GET /js/pages/transacoes.js
+[11/04/2025, 18:53] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[11/04/2025, 18:53] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[11/04/2025, 18:53] [INFO] Requisição: GET /componente/categoria?ativo=true
+[11/04/2025, 18:53] [INFO] Requisição recebida para listar categorias (via ComponentesController).
+[11/04/2025, 18:53] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:53] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:53] [INFO] Consulta realizada: 3 categorias encontradas.
+[11/04/2025, 18:53] [INFO] Requisição: GET /componente/tipo
+[11/04/2025, 18:53] [INFO] Requisição recebida para listar tipos.
+[11/04/2025, 18:53] [INFO] Requisição: GET /financeiro/financeiro?descricao=&datainicio=&datafinal=&tipo=&idcategoria=
+[11/04/2025, 18:53] [INFO] 
+            WITH tab AS (
+                SELECT ff.`data`, ff.dataalteracao, ff.descricao AS desc_financeiro, ff.idcategoria,
+                ff.idfinanceiro, ff.tipo, ff.valor, fc.descricao AS desc_categoria, fc.cor
+                FROM fn_financeiro ff 
+                INNER JOIN fn_categoria fc ON fc.idcategoria = ff.idcategoria
+                WHERE 1=1 
+            ),
+            tab_total AS (
+                SELECT SUM(CASE WHEN tipo = 'ENTRADA' THEN valor ELSE 0 END) AS total_entrada,
+                SUM(CASE WHEN tipo = 'SAIDA' THEN valor ELSE 0 END) AS total_saida
+                FROM tab
+            )
+            SELECT 
+                tab.*, 
+                tab_total.total_entrada, 
+                tab_total.total_saida, 
+                (tab_total.total_entrada - tab_total.total_saida) AS total_geral
+            FROM tab
+            JOIN tab_total ON TRUE
+            ORDER BY tab.data DESC;
+[11/04/2025, 18:53] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:53] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:53] [INFO] Consulta realizada: 4 registros encontrados.

@@ -181,7 +181,6 @@ exports.get = async (req, res, next) => {
             FROM tab
             JOIN tab_total ON TRUE
             ORDER BY tab.data DESC;`;
-            logger.info(sql);
 
         conn = await connect.getConnection();
         const [rows] = await conn.query(sql, params);
