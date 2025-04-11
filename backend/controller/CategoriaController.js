@@ -88,7 +88,7 @@ exports.get = async (req, res, next) => {
         );
 
         logger.info(`Consulta realizada: ${categorias.length} categorias encontradas.`);
-        res.status(200).json(new Response(true, categorias));
+        res.status(200).json(new Response(true, categorias.length == 1 ? categorias[0] : categorias));
     } catch (error) {   
         logger.error(`Erro ao buscar categorias: ${error.message}`);
         res.status(500).json(new Response(false, "Erro interno ao buscar categorias"));
