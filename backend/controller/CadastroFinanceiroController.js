@@ -98,20 +98,16 @@ exports.getById = async (req, res, next) => {
         conn = await connect.getConnection();
         const [rows] = await conn.query(sql, params);
 
-        if (rows.length === 0) {
-            res.status(404).json(new Response(false, 'Registro não encontrado.'));
-            return;
-        }
-        
-        const row = rows[0];
-        const financeiro = new Financeiro(
-            row.idfinanceiro,
-            row.descricao,
-            row.data,
-            row.idcategoria,
-            row.tipo,
-            row.valor,
-            row.dataalteracao
+        const financeiro = rows.map(row =>
+            new Financeiro(
+                row.idfinanceiro,
+                row.descricao,
+                row.data,
+                row.idcategoria,
+                row.tipo,
+                row.valor,
+                row.dataalteracao
+            )
         );
 
         logger.info(`Consulta realizada: ${financeiro.length} registros encontrados.`);
