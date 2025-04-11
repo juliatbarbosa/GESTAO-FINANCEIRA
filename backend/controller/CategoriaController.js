@@ -17,7 +17,7 @@ exports.post = async (req, res, next) => {
 
         conn = await connect.getConnection();
         const sql = "INSERT INTO fn_categoria (descricao, cor, ativo) VALUES (?, ?, ?)";
-        const values = [categoria.descricao, categoria.cor, categoria.ativo];
+        const values = [categoria.descricao, categoria.cor, (categoria.idcategoria === "true" ? 1 : 0)];
 
         await conn.query(sql, values);
         logger.info(`Categoria criada: ${JSON.stringify(categoria)}`);
