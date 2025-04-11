@@ -3,6 +3,8 @@ const Financeiro = require("../model/Financeiro");
 const connect = require("../conexao/Conexao");
 const Response = require("../model/Response");
 
+let conn;
+
 exports.delete = async (req, res, next) => {
     try {
         const { idfinanceiro } = req.body;
@@ -11,15 +13,15 @@ exports.delete = async (req, res, next) => {
             return res.status(400).json(new Response(false, "idfinanceiro é obrigatório."));
         }
 
-        const conn = await connect.getConnection();
+        conn = await connect.getConnection();
         const sql = "DELETE FROM fn_financeiro WHERE idfinanceiro = ?";
         const values = [idfinanceiro];
         await conn.query(sql, values);
         logger.info(`Registro financeiro excluído: ${idfinanceiro}`);
-        res.status(200).json(new Response(true, "ok"));
+        return res.status(200).json(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao excluir financeiro: ${error.message}`);
-        res.status(500).json(new Response(false, "Erro interno ao excluir financeiro"));
+        return res.status(500).json(new Response(false, "Erro interno ao excluir financeiro"));
     } finally {
         if (conn) conn.end();
     }
@@ -36,16 +38,16 @@ exports.post = async (req, res, next) => {
 
         const financeiro = new Financeiro(null, descricao, data, idcategoria, tipo, valor.replace(",", "."));
 
-        const conn = await connect.getConnection();
+        conn = await connect.getConnection();
         const sql = "INSERT INTO fn_financeiro (descricao, data, idcategoria, tipo, valor) VALUES (?, ?, ?, ?, ?)";
         const values = [financeiro.descricao, financeiro.data, financeiro.idcategoria, financeiro.tipo, financeiro.valor];
         await conn.query(sql, values);
         logger.info(sql, values);
         logger.info(`Registro financeiro criado: ${JSON.stringify(financeiro)}`);
-        res.status(200).json(new Response(true, "ok"));
+        return res.status(200).json(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao inserir financeiro: ${error.message}`);
-        res.status(500).json(new Response(false, "Erro interno ao inserir financeiro"));
+        return res.status(500).json(new Response(false, "Erro interno ao inserir financeiro"));
     } finally {
         if (conn) conn.end();
     }
@@ -62,17 +64,17 @@ exports.put = async (req, res, next) => {
 
         const financeiro = new Financeiro(idfinanceiro, descricao, data, idfinanceiro, tipo, valor, new Date());
 
-        const conn = await connect.getConnection();
+        conn = await connect.getConnection();
         const sql = "UPDATE fn_financeiro SET descricao = ?, data = ?, idcategoria = ?, tipo = ?, valor = ?, dataalteracao = ? WHERE idfinanceiro = ?";
         const values = [financeiro.descricao, financeiro.data, financeiro.idcategoria, financeiro.tipo, financeiro.valor, financeiro.dataalteracao, financeiro.idfinanceiro];
 
         await conn.query(sql, values);
         logger.info(`Registro financeiro atualizado: ${JSON.stringify(financeiro)}`);
 
-        res.status(200).json(new Response(true, "ok"));
+        return res.status(200).json(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao atualizar financeiro ${req.params.id}: ${error.message}`);
-        res.status(500).json(new Response(false, "Erro interno ao atualizar financeiro"));
+        return res.status(500).json(new Response(false, "Erro interno ao atualizar financeiro"));
     } finally {
         if (conn) conn.end();
     }
@@ -111,17 +113,16 @@ exports.getById = async (req, res, next) => {
         );
 
         logger.info(`Consulta realizada: ${financeiro.length} registros encontrados.`);
-        res.status(200).json(new Response(true, financeiro));
+        return res.status(200).json(new Response(true, financeiro));
     } catch (error) {
         logger.error(`Erro ao buscar registros: ${error.message}`);
-        res.status(500).json(new Response(false, "Erro interno ao buscar registros"));
+        return res.status(500).json(new Response(false, "Erro interno ao buscar registros"));
     } finally {
         if (conn) conn.end();
     }
 };
 
 exports.get = async (req, res, next) => {
-    let conn;
     try {
         const {
             descricao,
@@ -200,7 +201,7 @@ exports.get = async (req, res, next) => {
         const message = rows.map(({ total_entrada, total_saida, total_geral, ...rest }) => rest);
 
         logger.info(`Consulta realizada: ${message.length} registros encontrados.`);
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message,
             total_entrada,
@@ -210,10 +211,7 @@ exports.get = async (req, res, next) => {
 
     } catch (error) {
         logger.error(`Erro ao buscar registros: ${error.message}`);
-        res.status(500).json({
-            success: false,
-            message: "Erro interno ao buscar registros"
-        });
+        return res.status(500).json(new Response(false, "Erro interno ao buscar registros"));
     } finally {
         if (conn) conn.end();
     }

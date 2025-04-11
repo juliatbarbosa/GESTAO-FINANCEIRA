@@ -3694,3 +3694,111 @@
 [11/04/2025, 18:29] [WARNING] Conexão encerrada detectada, tentando reconectar...
 [11/04/2025, 18:29] [INFO] Conexão com o banco de dados estabelecida.
 [11/04/2025, 18:29] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:36] [INFO] Servidor rodando em http://localhost:3333
+[11/04/2025, 18:36] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:36] [INFO] Requisição: GET /pages/categorias.html
+[11/04/2025, 18:36] [INFO] Requisição: GET /css/style.css
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/framework/moment.min.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /img/logo.png
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/servidor.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/servidorcomponentes.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/utils.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/pages/categorias.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /font/Montserrat-Regular.ttf
+[11/04/2025, 18:36] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:36] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:36] [INFO] Requisição: GET /css/style.css
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[11/04/2025, 18:36] [INFO] Requisição: GET /pages/categorias.html
+[11/04/2025, 18:36] [INFO] Requisição: GET /css/style.css
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/framework/moment.min.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /img/logo.png
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/servidor.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/servidorcomponentes.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/utils.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/pages/categorias.js
+[11/04/2025, 18:36] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[11/04/2025, 18:36] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:36] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:36] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:36] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:37] [INFO] Requisição: GET /categorias/categoria?idcategoria=1
+[11/04/2025, 18:37] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:37] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:37] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:38] [INFO] Requisição: PUT /categorias/categoria
+[11/04/2025, 18:38] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:38] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:38] [ERROR] Erro ao atualizar categoria undefined: Incorrect integer value: 'false' for column `libertas5per`.`fn_categoria`.`ativo` at row 1
+[11/04/2025, 18:38] [ERROR] Erro no servidor: conn is not defined
+[11/04/2025, 18:38] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:38] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:39] [INFO] Requisição: GET /categorias/categoria?idcategoria=1
+[11/04/2025, 18:39] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:39] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:39] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:39] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:39] [INFO] Requisição: PUT /categorias/categoria
+[11/04/2025, 18:39] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:39] [ERROR] Erro ao atualizar categoria undefined: Incorrect integer value: 'false' for column `libertas5per`.`fn_categoria`.`ativo` at row 1
+[11/04/2025, 18:39] [ERROR] Erro no servidor: conn is not defined
+[11/04/2025, 18:39] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:39] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:39] [INFO] Servidor rodando em http://localhost:3333
+[11/04/2025, 18:39] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:39] [INFO] Requisição: GET /pages/categorias.html
+[11/04/2025, 18:39] [INFO] Requisição: GET /css/style.css
+[11/04/2025, 18:39] [INFO] Requisição: GET /js/framework/moment.min.js
+[11/04/2025, 18:39] [INFO] Requisição: GET /img/logo.png
+[11/04/2025, 18:39] [INFO] Requisição: GET /js/servidor.js
+[11/04/2025, 18:39] [INFO] Requisição: GET /js/servidorcomponentes.js
+[11/04/2025, 18:39] [INFO] Requisição: GET /js/utils.js
+[11/04/2025, 18:39] [INFO] Requisição: GET /js/pages/categorias.js
+[11/04/2025, 18:39] [INFO] Requisição: GET /js/framework/moment.min.js.map
+[11/04/2025, 18:39] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:39] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:39] [INFO] Requisição: GET /categorias/categoria?idcategoria=1
+[11/04/2025, 18:39] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:39] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:39] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:39] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:39] [INFO] Requisição: PUT /categorias/categoria
+[11/04/2025, 18:39] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:39] [INFO] Categoria atualizada: {"idcategoria":1,"descricao":"CategoriaTeste","cor":"#ffffff","ativo":"false"}
+[11/04/2025, 18:39] [ERROR] Erro no servidor: conn is not defined
+[11/04/2025, 18:39] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:39] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:40] [INFO] Requisição: GET /categorias/categoria?idcategoria=1
+[11/04/2025, 18:40] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:40] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:40] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:40] [INFO] Requisição: PUT /categorias/categoria
+[11/04/2025, 18:40] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:40] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:40] [INFO] Categoria atualizada: {"idcategoria":1,"descricao":"CategoriaTeste","cor":"#ffffff","ativo":"false"}
+[11/04/2025, 18:40] [ERROR] Erro no servidor: conn is not defined
+[11/04/2025, 18:40] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:40] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:44] [INFO] Servidor rodando em http://localhost:3333
+[11/04/2025, 18:44] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:44] [INFO] Requisição: GET /categorias/categoria?idcategoria=1
+[11/04/2025, 18:44] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:44] [INFO] Requisição: PUT /categorias/categoria
+[11/04/2025, 18:44] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:44] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:44] [INFO] Categoria atualizada: {"idcategoria":1,"descricao":"CategoriaTeste","cor":"#ffffff","ativo":"false"}
+[11/04/2025, 18:44] [ERROR] Erro no servidor: conn is not defined
+[11/04/2025, 18:44] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:44] [INFO] Consulta realizada: 4 categorias encontradas.
+[11/04/2025, 18:46] [INFO] Servidor rodando em http://localhost:3333
+[11/04/2025, 18:46] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:46] [INFO] Requisição: GET /categorias/categoria?idcategoria=1
+[11/04/2025, 18:46] [INFO] Consulta realizada: 1 categorias encontradas.
+[11/04/2025, 18:46] [INFO] Requisição: PUT /categorias/categoria
+[11/04/2025, 18:46] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:46] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:46] [INFO] Categoria atualizada: {"idcategoria":1,"descricao":"CategoriaTeste","cor":"#ffffff","ativo":"false"}
+[11/04/2025, 18:46] [INFO] Requisição: GET /categorias/categoria?descricao=&ativo=
+[11/04/2025, 18:46] [WARNING] Conexão encerrada detectada, tentando reconectar...
+[11/04/2025, 18:46] [INFO] Conexão com o banco de dados estabelecida.
+[11/04/2025, 18:46] [INFO] Consulta realizada: 4 categorias encontradas.
