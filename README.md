@@ -89,15 +89,15 @@ gestao-financeira-main/
 │   │   ├── logo.png                # Logo da aplicação
 │   │   └── lupa.png                # Ícone de busca
 │   ├── js/
-│   ├── framework/
-│   │   └── moment.min.js       # Biblioteca para manipulação de datas
-│   ├── pages/
-│   │   ├── categorias.html     # Página de categorias
-│   │   └── transacoes.html     # Página de transações
-│   ├── servidor.js             # Servidor principal JS
-│   ├── servidorcomponentes.js  # Servidor de componentes JS
-│   └── utils.js                # Arquivo de utilidades JS
-│  ─── index.html                  # Página inicial
+│   │   ├── framework/
+│   │   │   └── moment.min.js       # Biblioteca para manipulação de datas
+│   │   ├── pages/
+│   │   │   ├── categorias.html     # Página de categorias
+│   │   │   └── transacoes.html     # Página de transações
+│   │   ├── servidor.js             # Servidor principal JS
+│   │   ├── servidorcomponentes.js  # Servidor de componentes JS
+│   │   └── utils.js                # Arquivo de utilidades JS
+│   └── index.html                  # Página inicial
 │
 └── README.md                       # Documentação do projeto
 ```
@@ -166,8 +166,8 @@ As operações CRUD são implementadas no frontend usando funções específicas
 
 Adiciona uma camada de serviço entre os controladores e os modelos para encapsular regras de negócio complexas.
 
-- **Implementação**: Apesar de não existir uma camada de serviço explícita, as regras de negócio podem ser encontradas nos arquivos de controladores (`backend/controller/`).
-  - Exemplo: No `CadastroFinanceiroController.js`, o método `post` pode incluir validações e lógica específica.
+- **Implementação**: Apesar de não existir uma camada de serviço explícita, as regras de negócio podem ser encontradas nos arquivos de controladores (`backend/controller/`).  
+  Exemplo: No `CadastroFinanceiroController.js`, o método `post` pode incluir validações e lógica específica.
 
 #### Características:
 - Validações e regras de negócio intermediárias.
@@ -183,9 +183,9 @@ Adiciona uma camada de serviço entre os controladores e os modelos para encapsu
 
 Utilizado implicitamente através dos métodos de conversão de dados nos modelos e controladores.
 
-- **Implementação**: Nos arquivos de modelo (`backend/model/`), os dados são mapeados e formatados para uso interno ou externo.
-  - Exemplo: Construtores nas classes `Financeiro` e `Categoria`.
-  - Nos controladores, os dados são transformados em JSON para respostas da API.
+- **Implementação**: Nos arquivos de modelo (`backend/model/`), os dados são mapeados e formatados para uso interno ou externo.  
+  Exemplo: Construtores nas classes `Financeiro` e `Categoria`.  
+  Nos controladores, os dados são transformados em JSON para respostas da API.
 
 #### Características:
 - Conversão padronizada de dados.
@@ -292,8 +292,10 @@ Frontend: http://localhost:3333
 - O backend está configurado para rodar na porta **3333**.
 - O frontend é servido automaticamente pelo Express através do diretório `frontend`.
 - Certifique-se de que o servidor backend esteja em execução.
+```
 
 ---
+
 ### Transação Financeira
 ```json
 {
@@ -316,7 +318,6 @@ Frontend: http://localhost:3333
   "ativo": true
 }
 ```
-```
 
 ---
 
@@ -335,13 +336,14 @@ A aplicação utiliza um sistema de logging personalizado implementado no diret�
 - **Formato dos Logs**: Cada entrada inclui data, hora e nível de severidade.
 
 ### Exemplo de Formato de Log
+
+```
 [01/10/2023 14:30:00] [INFO] Servidor iniciado com sucesso.
 [01/10/2023 14:35:12] [WARNING] Tentativa de acesso a rota inexistente: /categorias/api/invalida.
 [01/10/2023 14:40:45] [ERROR] Erro ao conectar ao banco de dados: Connection refused.
+```
 
 ### Implementação
-
-O logger está implementado na classe `Logger` (`backend/logger/Logger.js`) com as seguintes funcionalidades:
 
 - **Criação de Arquivo de Log**: Cria `logs.txt` se não existir.
 - **Registro de Logs**: Métodos assíncronos para evitar bloqueios durante a escrita:
@@ -355,7 +357,6 @@ O logger está implementado na classe `Logger` (`backend/logger/Logger.js`) com 
 - **Centralização**: Uma única instância gerencia todos os logs.
 - **Persistência**: Logs são salvos para auditoria.
 - **Flexibilidade**: Suporte a múltiplos níveis de severidade, facilitando o monitoramento da aplicação.
-```
 
 ---
 
