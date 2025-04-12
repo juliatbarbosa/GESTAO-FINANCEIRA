@@ -335,11 +335,9 @@ A aplicação utiliza um sistema de logging personalizado implementado no diret�
 - **Formato dos Logs**: Cada entrada inclui data, hora e nível de severidade.
 
 ### Exemplo de Formato de Log
-```
 [01/10/2023 14:30:00] [INFO] Servidor iniciado com sucesso.
 [01/10/2023 14:35:12] [WARNING] Tentativa de acesso a rota inexistente: /categorias/api/invalida.
 [01/10/2023 14:40:45] [ERROR] Erro ao conectar ao banco de dados: Connection refused.
-```
 
 ### Implementação
 
