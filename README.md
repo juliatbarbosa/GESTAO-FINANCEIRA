@@ -89,12 +89,15 @@ gestao-financeira-main/
 │   │   ├── logo.png                # Logo da aplicação
 │   │   └── lupa.png                # Ícone de busca
 │   ├── js/
-│   │   ├── framework/
-│   │   │   └── moment.min.js       # Biblioteca para manipulação de datas
-│   │   └── pages/
-│   │       ├── categorias.html     # Página de categorias
-│   │       └── transacoes.html     # Página de transações
-│   └── index.html                  # Página inicial
+│   ├── framework/
+│   │   └── moment.min.js       # Biblioteca para manipulação de datas
+│   ├── pages/
+│   │   ├── categorias.html     # Página de categorias
+│   │   └── transacoes.html     # Página de transações
+│   ├── servidor.js             # Servidor principal JS
+│   ├── servidorcomponentes.js  # Servidor de componentes JS
+│   └── utils.js                # Arquivo de utilidades JS
+│─── index.html                  # Página inicial
 │
 └── README.md                       # Documentação do projeto
 ```
