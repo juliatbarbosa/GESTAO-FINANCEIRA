@@ -258,10 +258,9 @@ Implementado através do sistema de rotas do Express, centralizando todas as req
 
 ---
 
-## API REST, Instalação e Estrutura de Dados
+## Instalação, Operações CRUD e Estrutura de Dados
 
 ```
-#### Exemplo de Implementação de Repositório
 As operações CRUD são implementadas no frontend usando funções específicas para interagir com os endpoints do backend.
 Abaixo estão exemplos das principais operações:
 ```javascript
