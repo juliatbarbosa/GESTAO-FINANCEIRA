@@ -1,11 +1,10 @@
 <!-- README.md -->
-
 <div align="center">
 
 # Gestão Financeira Main
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=appveyor)  
-![Status: Em Desenvolvimento](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow?style=for-the-badge)
+![Status: Concluído](https://img.shields.io/badge/status-Conclu%C3%ADdo-success?style=for-the-badge)
 
 </div>
 
