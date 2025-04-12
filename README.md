@@ -349,10 +349,10 @@ O logger está implementado na classe `Logger` (`backend/logger/Logger.js`) com 
 
 ## Contato
 
-Para mais informações, dúvidas ou sugestões, entre em contato:
+Contribuidores:
 
-- **Email**: [contato@seusite.com](mailto:contato@seusite.com)
-- **LinkedIn**: [Seu Perfil no LinkedIn](https://www.linkedin.com/in/seu-perfil)
-- **GitHub**: [seu-usuario](https://github.com/seu-usuario)
+- [juliatbarbosa](https://github.com/juliatbarbosa)
+- [Tulio220](https://github.com/Tulio220)
+- [LeonardoProdossimo](https://github.com/LeonardoProdossimo)
 
 ---
