@@ -1,22 +1,33 @@
 <!-- README.md -->
 <div align="center">
 
-# Gestão Financeira Main
+  <!-- Logo – utilize a imagem localizada em frontend/img/logo.png ou ajuste conforme necessário -->
+  <img src="frontend/img/logo.png" alt="Logo Gestão Financeira Main" width="200" />
 
-![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=appveyor)  
-![Status: Concluído](https://img.shields.io/badge/status-Conclu%C3%ADdo-success?style=for-the-badge)
+  <h1 style="font-size:3rem; margin-top: 1rem;">Gestão Financeira Main</h1>
+
+  <div style="margin-top: 0.5rem;">
+    <span>
+      <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=appveyor" alt="License: MIT" />
+    </span>
+    <span>
+      <img src="https://img.shields.io/badge/status-Conclu%C3%ADdo-success?style=for-the-badge" alt="Status: Concluído" />
+    </span>
+  </div>
+
+  <p style="font-size: 1.25rem; margin-top: 1rem; font-style: italic;">
+    Uma aplicação web moderna para o gerenciamento eficiente de finanças pessoais e empresariais.
+  </p>
 
 </div>
 
 ---
 
 <div align="center">
-  <em>Uma aplicação web moderna para o gerenciamento eficiente de finanças pessoais e empresariais.</em>
+  <p style="font-size: 1rem; max-width: 700px;">
+    Desenvolvida com <strong>Node.js</strong> e <strong>Express</strong>, a aplicação segue o padrão <strong>MVC (Model-View-Controller)</strong> para oferecer uma arquitetura escalável, organizada e de alta performance, elevando a experiência do usuário a um novo patamar.
+  </p>
 </div>
-
----
-
-Desenvolvida com **Node.js** e **Express**, a aplicação segue o padrão **MVC (Model-View-Controller)** para oferecer uma arquitetura escalável, organizada e de alta performance.
 
 ---
 
