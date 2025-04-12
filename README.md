@@ -97,7 +97,7 @@ gestao-financeira-main/
 │   ├── servidor.js             # Servidor principal JS
 │   ├── servidorcomponentes.js  # Servidor de componentes JS
 │   └── utils.js                # Arquivo de utilidades JS
-│─── index.html                  # Página inicial
+│  ─── index.html                  # Página inicial
 │
 └── README.md                       # Documentação do projeto
 ```
