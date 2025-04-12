@@ -14,54 +14,7 @@ Uma aplicação web para gerenciamento de finanças pessoais e empresariais, des
 - Persistência de dados em banco de dados relacional (MySQL/PostgreSQL).
 
 ## Estrutura do Projeto
-
-```
-gestao-financeira-main/
-│
-├── backend/
-│   ├── conexao/
-│   │   └── Conexao.js              # Configuração da conexão com o banco de dados
-│   ├── controller/
-│   │   ├── CadastroFinancieroController.js  # Controlador para transações financeiras
-│   │   ├── CategoriaController.js           # Controlador para categorias
-│   │   └── ComponentesController.js         # Controlador para componentes auxiliares
-│   ├── logger/
-│   │   ├── Logger.js               # Implementação de logging personalizado
-│   │   └── logs.txt                # Arquivo de logs
-│   ├── model/
-│   │   ├── Categorias.js           # Modelo de Categoria
-│   │   ├── Financeiros.js          # Modelo de Transação Financeira
-│   │   ├── Response.js             # Modelo de resposta genérica
-│   │   └── Tipo.js                 # Modelo de Tipo de Transação
-│   ├── routes/
-│   │   ├── CategoriaRoutes.js      # Rotas para categorias
-│   │   ├── ComponentesRoutes.js    # Rotas para componentes auxiliares
-│   │   └── FinanceiroRoutes.js     # Rotas para transações financeiras
-│   ├── server.js                   # Aplicação principal do servidor
-│   ├── package-lock.json
-│   └── package.json
-│
-├── frontend/
-│   ├── css/
-│   │   └── style.css               # Estilos CSS
-│   ├── font/
-│   │   ├── Montserrat-Regular.ttf  # Fonte regular
-│   │   └── Montserrat-SemiBold.ttf # Fonte semi-bold
-│   ├── img/
-│   │   ├── close.png               # Ícone de fechar
-│   │   ├── logo.png                # Logo da aplicação
-│   │   └── lupa.png                # Ícone de busca
-│   ├── js/
-│   │   ├── framework/
-│   │   │   └── moment.min.js       # Biblioteca para manipulação de datas
-│   │   └── pages/
-│   │       ├── categorias.html     # Página de categorias
-│   │       └── transacoes.html     # Página de transações
-│   └── index.html                  # Página inicial
-│
-└── README.md                       # Documentação do projeto
-```
-
+<pre><code>```plaintext gestao-financeira-main/ │ ├── backend/ │ ├── conexao/ │ │ └── Conexao.js # Configuração da conexão com o banco de dados │ ├── controller/ │ │ ├── CadastroFinancieroController.js # Controlador para transações financeiras │ │ ├── CategoriaController.js # Controlador para categorias │ │ └── ComponentesController.js # Controlador para componentes auxiliares │ ├── logger/ │ │ ├── Logger.js # Implementação de logging personalizado │ │ └── logs.txt # Arquivo de logs │ ├── model/ │ │ ├── Categorias.js # Modelo de Categoria │ │ ├── Financeiros.js # Modelo de Transação Financeira │ │ ├── Response.js # Modelo de resposta genérica │ │ └── Tipo.js # Modelo de Tipo de Transação │ ├── routes/ │ │ ├── CategoriaRoutes.js # Rotas para categorias │ │ ├── ComponentesRoutes.js # Rotas para componentes auxiliares │ │ └── FinanceiroRoutes.js # Rotas para transações financeiras │ ├── server.js # Aplicação principal do servidor │ ├── package-lock.json │ └── package.json │ ├── frontend/ │ ├── css/ │ │ └── style.css # Estilos CSS │ ├── font/ │ │ ├── Montserrat-Regular.ttf # Fonte regular │ │ └── Montserrat-SemiBold.ttf # Fonte semi-bold │ ├── img/ │ │ ├── close.png # Ícone de fechar │ │ ├── logo.png # Logo da aplicação │ │ └── lupa.png # Ícone de busca │ ├── js/ │ │ ├── framework/ │ │ │ └── moment.min.js # Biblioteca para manipulação de datas │ │ └── pages/ │ │ ├── categorias.html # Página de categorias │ │ └── transacoes.html # Página de transações │ └── index.html # Página inicial │ └── README.md # Documentação do projeto ```</code></pre>
 ## Padrões de Projeto Utilizados
 
 ### MVC (Model-View-Controller)
