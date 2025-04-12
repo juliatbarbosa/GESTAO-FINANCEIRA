@@ -33,7 +33,7 @@
 
 <!-- Cards de Linguagens / Tecnologias -->
 <div align="center" style="margin: 2rem 0;">
-  <h2>Tecnologias Utilizadas</h2>
+  <h2>🛠️ Tecnologias Utilizadas</h2>
   <table>
     <tr>
       <td align="center" style="padding: 1rem;">
@@ -60,21 +60,15 @@
 
 ---
 
-## Índice
+## 📄 Índice
 
-- [Características](#características)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Padrões de Projeto Utilizados](#padrões-de-projeto-utilizados)
-  - [MVC (Model-View-Controller)](#mvc-model-view-controller)
-  - [Singleton](#singleton)
-  - [Repository Pattern](#repository-pattern)
-  - [Service Layer](#service-layer)
-  - [DTO (Data Transfer Object)](#dto-data-transfer-object)
-  - [Front Controller](#front-controller)
-- [API REST, Instalação e Estrutura de Dados](#api-rest-instalação-e-estrutura-de-dados)
-- [Exemplos de Dados](#exemplos-de-dados)
-- [Logging](#logging)
-- [Contato](#contato)
+- [✨ Características](#características)
+- [📂 Estrutura do Projeto](#estrutura-do-projeto)
+- [🔨 Padrões de Projeto Utilizados](#padrões-de-projeto-utilizados)
+- [🚀 API REST, Instalação e Estrutura de Dados](#api-rest-instalação-e-estrutura-de-dados)
+- [🔍 Exemplos de Dados](#exemplos-de-dados)
+- [📊 Logging](#logging)
+- [👥 Contato](#contato)
 
 ---
 
