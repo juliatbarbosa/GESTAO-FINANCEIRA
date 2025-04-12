@@ -349,10 +349,12 @@ O logger está implementado na classe `Logger` (`backend/logger/Logger.js`) com 
 
 ## Contato
 
-Contribuidores:
+### Contribuidores
 
-- [juliatbarbosa](https://github.com/juliatbarbosa)
-- [Tulio220](https://github.com/Tulio220)
-- [LeonardoProdossimo](https://github.com/LeonardoProdossimo)
+Clique nos ícones abaixo para conhecer os perfis dos nossos contribuintes:
+
+- [![GitHub: juliatbarbosa](https://img.shields.io/badge/GitHub-juliatbarbosa-blue?style=for-the-badge&logo=github)](https://github.com/juliatbarbosa)
+- [![GitHub: Tulio220](https://img.shields.io/badge/GitHub-Tulio220-blue?style=for-the-badge&logo=github)](https://github.com/Tulio220)
+- [![GitHub: LeonardoProdossimo](https://img.shields.io/badge/GitHub-LeonardoProdossimo-blue?style=for-the-badge&logo=github)](https://github.com/LeonardoProdossimo)
 
 ---
