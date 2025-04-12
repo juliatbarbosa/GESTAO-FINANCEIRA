@@ -1,5 +1,3 @@
-Com base no conteúdo fornecido, organizei e formatei o arquivo completo para que ele possa ser usado diretamente no seu `README.md`. Abaixo está a versão final formatada em Markdown:
-
 ---
 
 ```markdown
