@@ -81,7 +81,7 @@
 ## Características
 
 - Interface web responsiva usando **CSS3** e **JavaScript**.
-- API REST completa para integração com outras aplicações.
+- **Integração com Backend via Fetch** para comunicação com o servidor.
 - Gerenciamento de transações financeiras com informações como valor, categoria, data e tipo.
 - Categorização de transações para melhor organização.
 - Busca e filtragem de transações por categoria ou tipo.
@@ -261,52 +261,32 @@ Implementado através do sistema de rotas do Express, centralizando todas as req
 ## API REST, Instalação e Estrutura de Dados
 
 ```
-## API REST
+#### Exemplo de Implementação de Repositório
+As operações CRUD são implementadas no frontend usando funções específicas para interagir com os endpoints do backend.
+Abaixo estão exemplos das principais operações:
+```javascript
+// Listar transações
+function getTransacoes() {
+    fetch('http://127.0.0.1:3333/financeiro/financeiro', {
+        method: "GET",
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then(resp => resp.json())
+    .then(dados => listaTransacoes(dados))
+    .catch(err => console.error("Erro ao buscar dados:", err));
+}
 
-A aplicação oferece uma API REST completa para operações CRUD de transações financeiras e categorias. Abaixo, os endpoints disponíveis:
-
-### Endpoints de Categorias
-
-- **`POST /categoria`**: Cria uma nova categoria.
-- **`PUT /categoria`**: Atualiza uma categoria existente.
-- **`GET /categoria`**: Lista todas as categorias.
-
-#### Observações:
-- O endpoint `GET /categoria` retorna todas as categorias cadastradas.
-- Os endpoints `POST` e `PUT` esperam um corpo JSON com os dados da categoria.
-
----
-
-### Endpoints de Componentes Auxiliares
-
-- **`GET /categoria`**: Retorna as categorias disponíveis para uso no frontend.
-- **`GET /tipo`**: Retorna os tipos de transações financeiras (ex.: receita, despesa).
-
-#### Observações:
-- Esses endpoints preenchem componentes dinâmicos (dropdowns, seletores, etc.) no frontend.
-
----
-
-### Endpoints de Transações Financeiras
-
-- **`DELETE /financeiro`**: Exclui uma transação financeira.
-- **`POST /financeiro`**: Cria uma nova transação financeira.
-- **`PUT /financeiro`**: Atualiza uma transação financeira existente.
-- **`GET /financeiro`**: Lista todas as transações financeiras.
-- **`GET /financeiroeditar`**: Obtém os detalhes de uma transação para edição.
-
-#### Observações:
-- O endpoint `GET /financeiro` pode incluir filtros via query params.
-- O endpoint `GET /financeiroeditar` é usado para recuperar dados de uma transação específica.
-
----
-
-### Benefícios da Estrutura de Rotas
-
-- **Organização Clara**: As rotas estão separadas por funcionalidade.
-- **Reutilização de Código**: Controladores específicos encapsulam a lógica de negócio.
-- **Facilidade de Integração**: Endpoints simples e consistentes para interação com o frontend ou outras aplicações.
-
+// Criar uma nova transação
+function postTransacao(obj) {
+    fetch("http://127.0.0.1:3333/financeiro/financeiro", {
+        method: "POST",
+        body: JSON.stringify(obj),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then(resp => resp.json())
+    .then(retorno => toast(retorno.message, retorno.success))
+    .catch(err => console.error("Erro ao criar transação:", err));
+}
 ---
 ## 🧩 Instalação
 
