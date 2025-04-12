@@ -308,7 +308,7 @@ A aplicação oferece uma API REST completa para operações CRUD de transaçõe
 - **Facilidade de Integração**: Endpoints simples e consistentes para interação com o frontend ou outras aplicações.
 
 ---
-### 🧩 Instalação
+## 🧩 Instalação
 
 Siga os passos abaixo para rodar a aplicação localmente:
 
