@@ -1,5 +1,3 @@
----
-
 ```markdown
 # Gestão Financeira Main
 
