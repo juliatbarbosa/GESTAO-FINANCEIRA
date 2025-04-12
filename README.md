@@ -307,34 +307,44 @@ A aplicação oferece uma API REST completa para operações CRUD de transaçõe
 - **Reutilização de Código**: Controladores específicos encapsulam a lógica de negócio.
 - **Facilidade de Integração**: Endpoints simples e consistentes para interação com o frontend ou outras aplicações.
 
-## Instalação
+---
+## 🧩 Instalação
 
-1. Clone o repositório:
+Siga os passos abaixo para rodar a aplicação localmente:
+
+---
+
+### 1. Clone o repositório
+
 ```bash
 git clone https://github.com/seu-usuario/gestao-financeira-main.git
 cd gestao-financeira-main
 ```
 
-2. Execute o backend:
+---
+
+### 2. Instale e execute o backend
+
 ```bash
 cd backend
 npm install
 npm start
 ```
 
-3. Acesse a aplicação em seu navegador:
-```
-Backend: http://localhost:3333
+---
+
+### 3. Acesse a aplicação no navegador
+
+```bash
+Backend:  http://localhost:3333
 Frontend: http://localhost:3333
 ```
 
-#### Observações:
-- O backend está configurado para rodar na porta **3333**.
-- O frontend é servido automaticamente pelo Express através do diretório `frontend`.
-- Certifique-se de que o servidor backend esteja em execução.
-```
-
 ---
+
+📌 **Nota:**  
+O frontend é servido automaticamente pelo **Express**, portanto você acessa tudo via a mesma porta. Certifique-se de que o servidor backend esteja em execução antes de abrir o navegador.
+
 
 ### Transação Financeira
 ```json
