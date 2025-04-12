@@ -1,11 +1,23 @@
 <!-- README.md -->
 
+<div align="center">
+
 # Gestão Financeira Main
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Status](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=appveyor)  
+![Status: Em Desenvolvimento](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow?style=for-the-badge)
 
-Uma aplicação web para o gerenciamento de finanças pessoais e empresariais, desenvolvida com Node.js e Express seguindo o padrão **MVC (Model-View-Controller)**.
+</div>
+
+---
+
+<div align="center">
+  <em>Uma aplicação web moderna para o gerenciamento eficiente de finanças pessoais e empresariais.</em>
+</div>
+
+---
+
+Desenvolvida com **Node.js** e **Express**, a aplicação segue o padrão **MVC (Model-View-Controller)** para oferecer uma arquitetura escalável, organizada e de alta performance.
 
 ---
 
