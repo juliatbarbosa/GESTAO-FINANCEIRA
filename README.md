@@ -83,7 +83,7 @@
 - Categorização de transações para melhor organização.
 - Busca e filtragem de transações por categoria ou tipo.
 - Logging de operações usando logs personalizados.
-- Persistência de dados em banco de dados relacional (**MySQL/PostgreSQL**).
+- Persistência de dados em banco de dados relacional (**MySQL**).
 
 ---
 
