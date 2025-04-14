@@ -253,8 +253,8 @@ Siga os passos abaixo para rodar a aplicação localmente:
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/gestao-financeira-main.git
-cd gestao-financeira-main
+git clone https://github.com/juliatbarbosa/GESTAO-FINANCEIRA.git
+cd GESTAO-FINANCEIRA
 ```
 
 ---
