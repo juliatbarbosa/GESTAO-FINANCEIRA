@@ -68,7 +68,7 @@
   - [Service Layer](#service-layer)
   - [DTO (Data Transfer Object)](#dto-data-transfer-object)
   - [Front Controller](#front-controller)
-- [API REST, Instalação e Estrutura de Dados](#api-rest-instalação-e-estrutura-de-dados)
+- [API, Instalação e Estrutura de Dados](#api-rest-instalação-e-estrutura-de-dados)
 - [Exemplos de Dados](#exemplos-de-dados)
 - [Logging](#logging)
 - [Contato](#contato)
