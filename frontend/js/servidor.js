@@ -1,18 +1,27 @@
-function getTransacoes() {
+function getTransacoes(filtro) {
     abrirLoading()
 
     fetch('http://127.0.0.1:3333/financeiro/financeiro'
-        + '?descricao='
-        + '&datainicio='
-        + '&datafinal='
-        + '&tipo='
-        + '&idcategoria=',
+        + '?descricao=' + document.querySelector("#inputdescricaofiltro").value
+        + '&datainicio=' + document.querySelector("#inputdatainiciofiltro").value
+        + '&datafinal=' + document.querySelector("#inputdatafinalfiltro").value
+        + '&tipo=' + document.querySelector("#inputtipofiltro").value
+        + '&idcategoria=' + document.querySelector("#inputcategoriafiltro").value,
         {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => listaTransacoes(dados))
+        .then(dados => {
+            if (dados.success) {
+                listaTransacoes(dados)
+                if (filtro) {
+                    modalFiltro.hide()
+                }
+            } else {
+                toast(dados.message, dados.success);
+            }
+        })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             fecharLoading()
@@ -27,7 +36,13 @@ function getTransacao(id) {
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => editar(dados.message[0]))
+        .then(dados => {
+            if (dados.success) {
+                editar(dados.message[0])
+            } else {
+                toast(dados.message, dados.success);
+            }
+        })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             fecharLoading()
@@ -48,7 +63,11 @@ function postTransacao(obj) {
         })
         .then(resp => resp.json())
         .then(function (retorno) {
-            toast(retorno.message, retorno.success);
+            if (retorno.success) {
+                toast("Transação adicionada com sucesso!", retorno.success);
+            } else {
+                toast(retorno.message, retorno.success);
+            }
         })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
@@ -63,7 +82,7 @@ function putTransacao(obj, id) {
     let body = JSON.stringify(obj);
     let endereco = "http://127.0.0.1:3333/financeiro/financeiro";
     let metodo = "PUT";
-    
+
     fetch(endereco,
         {
             method: metodo,
@@ -72,7 +91,11 @@ function putTransacao(obj, id) {
         })
         .then(resp => resp.json())
         .then(function (retorno) {
-            toast(retorno.message, retorno.success);
+            if (retorno.success) {
+                toast("Transação alterada com sucesso!", retorno.success);
+            } else {
+                toast(retorno.message, retorno.success);
+            }
         })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
@@ -81,18 +104,49 @@ function putTransacao(obj, id) {
         });
 }
 
-function getCategorias() {
+
+function deleteTransacao(id) {
+    abrirLoading()
+    var body = JSON.stringify({ "idfinanceiro": id });
+    fetch("http://127.0.0.1:3333/financeiro/financeiro",
+        {
+            method: "DELETE",
+            headers: { 'Content-Type': 'application/json' },
+            body: body
+        })
+        .then(resp => resp.json())
+        .then(function (retorno) {
+            if (retorno.success) {
+                toast("Transação excluída com sucesso!", retorno.success);
+            } else {
+                toast(retorno.message, retorno.success);
+            }
+        }).finally(function () {
+            getTransacoes();
+        });
+}
+
+function getCategorias(filtro) {
     abrirLoading()
 
     fetch('http://127.0.0.1:3333/categorias/categoria'
-        + '?descricao='
-        + '&ativo=',
+        + '?descricao=' + document.getElementById("inputdescricaofiltro").value
+        + '&ativo=' + document.getElementById("inputsituacaofiltro").value,
         {
             method: "GET",
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => listaCategorias(dados))
+        .then(dados => {
+            if (dados.success) {
+                listaCategorias(dados)
+                if (filtro) {
+                    modalFiltro.hide()
+                }
+            } else {
+                toast(dados.message, dados.success);
+            }
+        })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             fecharLoading()
@@ -107,7 +161,14 @@ function getCategoria(id) {
             headers: { 'Content-Type': 'application/json' },
         })
         .then(resp => resp.json())
-        .then(dados => editar(dados.message))
+        .then(dados => {
+            if (dados.success) {
+                editar(dados.message[0])
+            } else {
+                toast(dados.message, dados.success);
+            }
+        }
+        )
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
             fecharLoading()
@@ -128,7 +189,11 @@ function postCategoria(obj) {
         })
         .then(resp => resp.json())
         .then(function (retorno) {
-            toast(retorno.message, retorno.success);
+            if (retorno.success) {
+                toast("Categoria adicionada com sucesso!", retorno.success);
+            } else {
+                toast(retorno.message, retorno.success);
+            }
         })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {
@@ -143,7 +208,7 @@ function putCategoria(obj, id) {
     let body = JSON.stringify(obj);
     let endereco = "http://127.0.0.1:3333/categorias/categoria";
     let metodo = "PUT";
-    
+
     fetch(endereco,
         {
             method: metodo,
@@ -152,7 +217,11 @@ function putCategoria(obj, id) {
         })
         .then(resp => resp.json())
         .then(function (retorno) {
-            toast(retorno.message, retorno.success);
+            if (retorno.success) {
+                toast("Categoria alterada com sucesso!", retorno.success);
+            } else {
+                toast(retorno.message, retorno.success);
+            }
         })
         .catch(err => console.error("Erro ao buscar dados:", err))
         .finally(function () {

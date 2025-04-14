@@ -46,7 +46,7 @@ function fecharLoading() {
 
 function toast(mensagem, success) {
     document.querySelector('.toast-body').innerHTML = mensagem
-    document.querySelector('.toast').style.backgroundColor = (success ? 'var(--primaria-700)' : 'var(--error)');
+    document.querySelector('.toast').style.backgroundColor = (success ? 'var(--verde)' : 'var(--error)');
     modalToast.show()
 }
 

@@ -43,7 +43,7 @@
                 </div>
                 <div class="botoes">
                     <div class="btnPadrao" id="btnNovaTransacao" onclick="novaTransacao()" data-bs-toggle="modal"
-                    data-bs-target="#modal">
+                        data-bs-target="#modal">
                         <i class="ph ph-plus"></i>
                         Nova transação
                     </div>
@@ -80,11 +80,13 @@
             <div class="linhaFiltros">
                 <div class="divPesquisa">
                     <div id="pesquisa">
-                        <input type="text" class="form-control" id="inputPesquisar" placeholder="Pesquisar..." />
+                        <input type="text" class="form-control inputPesquisar" id="inputPesquisarTransacao"
+                            placeholder="Pesquisar..." />
                     </div>
                     <i id="imgPesquisa" class="ph ph-magnifying-glass"></i>
                 </div>
-                <i id="imgFunil" class="ph ph-funnel click" data-bs-toggle="modal" data-bs-target="#modalFiltro"></i>
+                <i id="imgFunil" class="ph ph-funnel click" onclick="abrirFiltro()" data-bs-toggle="modal"
+                    data-bs-target="#modalFiltro"></i>
             </div>
 
             <div class="tabela">
@@ -96,6 +98,7 @@
                             <th>Valor</th>
                             <th>Categoria</th>
                             <th class="colunaIcone"></th>
+                            <th class="colunaIcone"></th>
                         </tr>
                     </thead>
                     <tbody id="listaTransacoes"></tbody>
@@ -104,8 +107,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
-        aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -143,54 +145,71 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalFiltro" tabindex="-1" aria-labelledby="modalFiltroLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <form id="formFiltro">
+    <div class="modal fade" id="modalFiltro" tabindex="-1" role="dialog" aria-labelledby="modalFiltro"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalFiltroLabel">Filtros</h5>
-                <i class="ph ph-x click"></i>
-              </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                  <label for="descricao" class="form-label">Descrição</label>
-                  <input type="text" class="form-control" id="descricao" name="descricao">
+                <div class="modal-header">
+                        <h5 class="modal-title">Filtros</h5>
+                        <i class="ph ph-x click" id="imgFechar"></i>
                 </div>
-                <div class="mb-3">
-                  <label for="datainicio" class="form-label">Data Início</label>
-                  <input type="date" class="form-control" id="datainicio" name="datainicio">
+                <div class="modal-body">
+                    <div class="form-group" style="width: 100%;">
+                        <label for="inputdescricaofiltro">Descrição</label>
+                        <input id="inputdescricaofiltro" type="text" class="form-control" required autocomplete="off">
+                    </div>
+                    <div class="linhaFlex">
+                        <div class="form-group" style="width: 100%;">
+                            <label for="inputdatainiciofiltro">Data início</label>
+                            <input id="inputdatainiciofiltro" type="date" class="form-control" required
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group" style="width: 100%; margin-left: 10px;">
+                            <label for="inputdatafinalfiltro">Data fim</label>
+                            <input id="inputdatafinalfiltro" type="date" class="form-control" required
+                                autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="linhaFlex">
+                        <div class="form-group" style="width: 100%;">
+                            <label for="inputtipofiltro">Tipo</label>
+                            <select id="inputtipofiltro" class="form-control" required autocomplete="off"></select>
+                        </div>
+                        <div class="form-group" style="width: 100%; margin-left: 10px;">
+                            <label for="inputcategoriafiltro">Categoria</label>
+                            <select id="inputcategoriafiltro" class="form-control" required autocomplete="off"></select>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="mb-3">
-                  <label for="datafinal" class="form-label">Data Final</label>
-                  <input type="date" class="form-control" id="datafinal" name="datafinal">
+
+                <div class="modal-footer">
+                    <button type="button" id="limparfiltro" class="btnPadraoSecundario" data-dismiss="modal">Limpar
+                        filtro</button>
+                    <button type="button" id="filtrar" class="btnPadrao">Filtrar</button>
                 </div>
-                <div class="mb-3">
-                  <label for="tipo" class="form-label">Tipo</label>
-                  <select class="form-select" id="tipo" name="tipo">
-                    <option value="">Todos</option>
-                    <option value="ENTRADA">Entrada</option>
-                    <option value="SAIDA">Saída</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label for="idcategoria" class="form-label">Categoria</label>
-                  <select class="form-select" id="idcategoria" name="idcategoria">
-                    <option value="">Todas</option>
-                    <!-- Adicione dinamicamente as categorias aqui -->
-                    <option value="1">Alimentação</option>
-                    <option value="2">Transporte</option>
-                    <option value="3">Lazer</option>
-                  </select>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="reset" class="btn btn-secondary">Limpar</button>
-                <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
-              </div>
             </div>
-          </form>
         </div>
-      </div>
+    </div>
+
+    <!-- MODAL EXCLUIR CADASTRO -->
+    <div class="modal fade" id="excluirTransacao" tabindex="-1" role="dialog" aria-labelledby="excluirTransacao"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloExcluir">Excluir</h5>
+                </div>
+                <div class="modal-body" id="bodyExcluir">
+                    Deseja excluir essa transação?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="naoExcluir" class="btnPadraoSecundario" data-dismiss="modal">Não</button>
+                    <button type="button" id="simExcluir" class="btnPadrao">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- TOAST -->
     <div id="toast" class="toast align-items-center border-0 position-fixed bottom-0 end-0 m-3" role="alert"

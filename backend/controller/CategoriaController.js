@@ -17,7 +17,7 @@ exports.post = async (req, res, next) => {
 
         conn = await connect.getConnection();
         const sql = "INSERT INTO fn_categoria (descricao, cor, ativo) VALUES (?, ?, ?)";
-        const values = [categoria.descricao, categoria.cor, (categoria.idcategoria === "true" ? 1 : 0)];
+        const values = [categoria.descricao, categoria.cor, (categoria.ativo == "true" ? 1 : 0)];
 
         await conn.query(sql, values);
         logger.info(`Categoria criada: ${JSON.stringify(categoria)}`);
@@ -44,7 +44,7 @@ exports.put = async (req, res, next) => {
 
         conn = await connect.getConnection();
         const sql = "UPDATE fn_categoria SET descricao = ?, cor = ?, ativo = ? WHERE idcategoria = ?";
-        const values = [categoria.descricao, categoria.cor, categoria.ativo, (categoria.idcategoria === "true" ? 1 : 0)];
+        const values = [categoria.descricao, categoria.cor, (categoria.ativo == "true" ? 1 : 0), categoria.idcategoria];
 
         await conn.query(sql, values);
         logger.info(`Categoria atualizada: ${JSON.stringify(categoria)}`);
@@ -89,7 +89,7 @@ exports.get = async (req, res, next) => {
         );
 
         logger.info(`Consulta realizada: ${categorias.length} categorias encontradas.`);
-        return res.status(200).json(new Response(true, categorias.length == 1 ? categorias[0] : categorias));
+        return res.status(200).json(new Response(true, categorias));
     } catch (error) {   
         logger.error(`Erro ao buscar categorias: ${error.message}`);
         return res.status(500).json(new Response(false, "Erro interno ao buscar categorias"));

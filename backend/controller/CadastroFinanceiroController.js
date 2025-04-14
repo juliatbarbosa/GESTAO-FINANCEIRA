@@ -36,7 +36,7 @@ exports.post = async (req, res, next) => {
             return res.status(400).json(new Response(false, "Descrição, data, idcategoria, tipo e valor são obrigatórios."));
         }
 
-        const financeiro = new Financeiro(null, descricao, data, idcategoria, tipo, valor.replace(",", "."));
+        const financeiro = new Financeiro(null, descricao, data, idcategoria, tipo, valor);
 
         conn = await connect.getConnection();
         const sql = "INSERT INTO fn_financeiro (descricao, data, idcategoria, tipo, valor) VALUES (?, ?, ?, ?, ?)";
@@ -47,7 +47,7 @@ exports.post = async (req, res, next) => {
         return res.status(200).json(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao inserir financeiro: ${error.message}`);
-        return res.status(500).json(new Response(false, "Erro interno ao inserir financeiro"));
+        return res.status(500).json(new Response(false, "Erro interno ao inserir transação"));
     } finally {
         if (conn) conn.end();
     }
@@ -62,7 +62,7 @@ exports.put = async (req, res, next) => {
             return res.status(400).json(new Response(false, "idfinanceiro, descrição, data, idcategoria, tipo e valor são obrigatórios."));
         }
 
-        const financeiro = new Financeiro(idfinanceiro, descricao, data, idfinanceiro, tipo, valor, new Date());
+        const financeiro = new Financeiro(idfinanceiro, descricao, data, idcategoria, tipo, valor, new Date());
 
         conn = await connect.getConnection();
         const sql = "UPDATE fn_financeiro SET descricao = ?, data = ?, idcategoria = ?, tipo = ?, valor = ?, dataalteracao = ? WHERE idfinanceiro = ?";
@@ -74,7 +74,7 @@ exports.put = async (req, res, next) => {
         return res.status(200).json(new Response(true, "ok"));
     } catch (error) {
         logger.error(`Erro ao atualizar financeiro ${req.params.id}: ${error.message}`);
-        return res.status(500).json(new Response(false, "Erro interno ao atualizar financeiro"));
+        return res.status(500).json(new Response(false, "Erro interno ao atualizar transação"));
     } finally {
         if (conn) conn.end();
     }
@@ -107,7 +107,7 @@ exports.getById = async (req, res, next) => {
                 row.data,
                 row.idcategoria,
                 row.tipo,
-                row.valor,
+                parseFloat(row.valor),
                 row.dataalteracao
             )
         );
@@ -197,15 +197,18 @@ exports.get = async (req, res, next) => {
 
         const { total_entrada, total_saida, total_geral } = rows[0];
 
-        const message = rows.map(({ total_entrada, total_saida, total_geral, ...rest }) => rest);
+        const message = rows.map(({ total_entrada, total_saida, total_geral, ...rest }) => ({
+            ...rest,
+            valor: parseFloat(rest.valor)
+        }));
 
         logger.info(`Consulta realizada: ${message.length} registros encontrados.`);
         return res.status(200).json({
             success: true,
             message,
-            total_entrada,
-            total_saida,
-            total_geral
+            total_entrada: parseFloat(total_entrada),
+            total_saida: parseFloat(total_saida),
+            total_geral: parseFloat(total_geral)
         });
 
     } catch (error) {
