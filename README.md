@@ -68,7 +68,7 @@
   - [Service Layer](#service-layer)
   - [DTO (Data Transfer Object)](#dto-data-transfer-object)
   - [Front Controller](#front-controller)
-- [API, Instalação e Estrutura de Dados](#api-rest-instalação-e-estrutura-de-dados)
+- [API, Instalação e Estrutura de Dados](#api-instalação-e-estrutura-de-dados)
 - [Exemplos de Dados](#exemplos-de-dados)
 - [Logging](#logging)
 - [Contato](#contato)
@@ -163,7 +163,7 @@ Separa a aplicação em três componentes interconectados, garantindo a separaç
   Implementados em `backend/controller/`.  
   Gerenciam o fluxo da aplicação, processando requisições HTTP.  
   Delegam operações de negócio para a camada de serviços.  
-  Disponibilizam endpoints tanto para API REST quanto para interface web.
+  Disponibilizam endpoints tanto para API quanto para interface web.
 
 **Benefícios**: Manutenção simplificada, facilidade para testes, reutilização de código e desenvolvimento paralelo por diferentes membros da equipe.
 
@@ -182,12 +182,12 @@ Um padrão criacional que garante que uma classe tenha apenas uma instância e f
 
 Um padrão estrutural que isola a camada de domínio da lógica de acesso a dados.
 
-- **Implementação**: No frontend, as operações de acesso a dados são realizadas através de chamadas HTTP (`fetch`) para os endpoints da API REST.  
+- **Implementação**: No frontend, as operações de acesso a dados são realizadas através de chamadas HTTP (`fetch`) para os endpoints da API.  
   Essas chamadas encapsulam a lógica de comunicação com o backend, permitindo que o frontend interaja com os dados sem precisar conhecer os detalhes de implementação do banco de dados.
 
 #### Exemplo de Implementação de Repositório
 
-As operações CRUD são implementadas no frontend usando funções específicas para interagir com os endpoints da API REST.
+As operações CRUD são implementadas no frontend usando funções específicas para interagir com os endpoints da API.
 
 #### Características:
 - **Abstração Completa da Fonte de Dados**: O frontend não precisa conhecer os detalhes do banco de dados ou da implementação do backend.
