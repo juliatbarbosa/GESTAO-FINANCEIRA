@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const componentesController = require("../controller/ComponentesController.js");
+const componentesService = require("../service/ComponentesService.js");
 
-router.get("/categoria", componentesController.getCategoria);
-router.get("/tipo", componentesController.getTipo);
+router.get("/categoria", componentesService.getCategoria);
+router.get("/tipo", componentesService.getTipo);
 
 module.exports = router;

@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const categoriaController = require("../controller/categoriaController.js");
+const categoriaService = require("../service/CategoriaService.js");
 
-router.post("/categoria", categoriaController.post);
-router.put("/categoria", categoriaController.put);
-router.get("/categoria", categoriaController.get);
+router.post("/categoria", categoriaService.post);
+router.put("/categoria", categoriaService.put);
+router.get("/categoria", categoriaService.get);
 
 module.exports = router;
