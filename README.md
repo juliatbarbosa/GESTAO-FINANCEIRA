@@ -2,9 +2,9 @@
 <div align="center">
 
   <!-- Logo – utilize a imagem localizada em frontend/img/logo.png ou ajuste conforme necessário -->
-  <img src="frontend/img/logo.png" alt="Logo Gestão Financeira Main" width="200" />
+  <img src="frontend/img/logo.png" alt="Logo Gestão Financeira" width="200" />
 
-  <h1 style="font-size:3rem; margin-top: 1rem;">Gestão Financeira Main</h1>
+  <h1 style="font-size:3rem; margin-top: 1rem;">Gestão Financeira</h1>
 
   <div style="margin-top: 0.5rem;">
     <span>
