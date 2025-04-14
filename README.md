@@ -93,10 +93,10 @@ gestao-financeira-main/
 ├── backend/
 │   ├── conexao/
 │   │   └── Conexao.js              # Configuração da conexão com o banco de dados
-│   ├── controller/
-│   │   ├── CadastroFinancieroController.js  # Controlador para transações financeiras
-│   │   ├── CategoriaController.js           # Controlador para categorias
-│   │   └── ComponentesController.js         # Controlador para componentes auxiliares
+│   ├── service/
+│   │   ├── CadastroFinancieroService.js  # Service para transações financeiras
+│   │   ├── CategoriaService.js           # Service para categorias
+│   │   └── ComponentesService.js         # Service para componentes auxiliares
 │   ├── logger/
 │   │   ├── Logger.js               # Implementação de logging personalizado
 │   │   └── logs.txt                # Arquivo de logs
