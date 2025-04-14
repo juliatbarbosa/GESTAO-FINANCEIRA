@@ -282,12 +282,12 @@ input {
     width: 100%;
 }
 
-.inputPesquisar {
+#pesquisa .inputPesquisar {
     font-size: 14px !important;
     color: #85888E !important;
-    background-color: transparent !important;
-    border: none !important;
+    background-color: #13161b !important;
     font-family: "montesserrat";
+    border: 1px solid var(--cinza_escuro) !important;
 }
 
 .inputPesquisar::placeholder {
