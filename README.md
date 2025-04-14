@@ -64,7 +64,6 @@
 - [Padrões de Projeto Utilizados](#padrões-de-projeto-utilizados)
   - [MVC (Model-View-Controller)](#mvc-model-view-controller)
   - [Singleton](#singleton)
-  - [Service Layer](#service-layer)
   - [DTO (Data Transfer Object)](#dto-data-transfer-object)
   - [Front Controller](#front-controller)
 - [API, Instalação e Estrutura de Dados](#api-instalação-e-estrutura-de-dados)
