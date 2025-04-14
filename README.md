@@ -178,44 +178,6 @@ Um padrão criacional que garante que uma classe tenha apenas uma instância e f
 
 **Benefícios**: Economia de recursos, acesso centralizado ao log em toda a aplicação, garantia de consistência nos registros.
 
-### Repository Pattern
-
-Um padrão estrutural que isola a camada de domínio da lógica de acesso a dados.
-
-- **Implementação**: No frontend, as operações de acesso a dados são realizadas através de chamadas HTTP (`fetch`) para os endpoints da API.  
-  Essas chamadas encapsulam a lógica de comunicação com o backend, permitindo que o frontend interaja com os dados sem precisar conhecer os detalhes de implementação do banco de dados.
-
-#### Exemplo de Implementação de Repositório
-
-As operações CRUD são implementadas no frontend usando funções específicas para interagir com os endpoints da API.
-
-#### Características:
-- **Abstração Completa da Fonte de Dados**: O frontend não precisa conhecer os detalhes do banco de dados ou da implementação do backend.
-- **Métodos CRUD Bem Definidos**: Cada operação (listar, buscar, criar, atualizar, excluir) é implementada como uma função específica no frontend.
-- **Tratamento de Erros de Persistência**: Os erros são capturados e tratados no frontend, garantindo que o usuário seja informado sobre problemas durante as operações.
-
-#### Benefícios:
-- Facilita mudanças na fonte de dados.
-- Simplifica testes unitários.
-- Promove o princípio de responsabilidade única.
-
-### Service Layer
-
-Adiciona uma camada de serviço entre os controladores e os modelos para encapsular regras de negócio complexas.
-
-- **Implementação**: Apesar de não existir uma camada de serviço explícita, as regras de negócio podem ser encontradas nos arquivos de controladores (`backend/controller/`).  
-  Exemplo: No `CadastroFinanceiroController.js`, o método `post` pode incluir validações e lógica específica.
-
-#### Características:
-- Validações e regras de negócio intermediárias.
-- Registro de operações para auditoria.
-- Separação clara de responsabilidades.
-
-#### Benefícios:
-- Código mais testável.
-- Lógica centralizada.
-- Maior flexibilidade na evolução da aplicação.
-
 ### DTO (Data Transfer Object)
 
 Utilizado implicitamente através dos métodos de conversão de dados nos modelos e controladores.
