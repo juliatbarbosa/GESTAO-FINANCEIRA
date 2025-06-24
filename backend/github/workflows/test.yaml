@@ -50,15 +50,11 @@ jobs:
       working-directory: ./backend
       run: npm run test:coverage
       
-    - name: Upload relatório de cobertura para Codecov
-      uses: codecov/codecov-action@v3
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./backend/coverage/lcov.info
-        flags: backend
-        name: backend-coverage
-        fail_ci_if_error: false
-        verbose: true
+        slug: juliatbarbosa/GESTAO-FINANCEIRA
         
     - name: Verificar qualidade do código
       working-directory: ./backend
