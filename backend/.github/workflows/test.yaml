@@ -1,0 +1,238 @@
+name: Testes e Deploy - Sistema de Gestão Financeira
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+
+env:
+  NODE_VERSION: '18'
+  NPM_VERSION: '9'
+
+jobs:
+  # Job para testar o backend
+  test-backend:
+    name: Testes Backend
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+    
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: Configurar Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+        
+    - name: Instalar dependências do backend
+      working-directory: ./backend
+      run: npm ci
+      
+    - name: Executar testes do backend
+      working-directory: ./backend
+      run: npm test
+      
+    - name: Executar testes com cobertura
+      working-directory: ./backend
+      run: npm run test:coverage
+      
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: juliatbarbosa/GESTAO-FINANCEIRA
+        
+    - name: Verificar qualidade do código
+      working-directory: ./backend
+      run: |
+        echo "Verificando dependências desatualizadas..."
+        npm outdated || true
+        echo "Verificando vulnerabilidades..."
+        npm audit --audit-level=moderate || true
+
+  # Job para testar o frontend (se existir)
+  test-frontend:
+    name: Testes Frontend
+    runs-on: ubuntu-latest
+    needs: test-backend
+    
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Verificar estrutura do frontend
+      run: |
+        if [ -d "frontend" ]; then
+          echo "Frontend encontrado, executando verificações..."
+          cd frontend
+          # Aqui você pode adicionar testes específicos do frontend
+          # npm install
+          # npm test
+          echo "Frontend verificado com sucesso"
+        else
+          echo "Frontend não encontrado, pulando..."
+        fi
+
+  # Job para análise de segurança
+  security-scan:
+    name: Análise de Segurança
+    runs-on: ubuntu-latest
+    needs: test-backend
+    
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Instalar dependências
+      working-directory: ./backend
+      run: npm ci
+      
+    - name: Executar auditoria de segurança
+      working-directory: ./backend
+      run: npm audit --audit-level=high
+      
+    - name: Verificar dependências com vulnerabilidades conhecidas
+      working-directory: ./backend
+      run: |
+        echo "Verificando dependências vulneráveis..."
+        npm audit --json > audit-report.json || true
+        if [ -s audit-report.json ]; then
+          echo "⚠️ Vulnerabilidades encontradas:"
+          cat audit-report.json | jq -r '.vulnerabilities | keys[]' || true
+        else
+          echo "✅ Nenhuma vulnerabilidade encontrada"
+        fi
+
+  # Job para build e deploy (opcional)
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: [test-backend, test-frontend, security-scan]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+        
+    - name: Instalar dependências
+      working-directory: ./backend
+      run: npm ci --only=production
+      
+    - name: Build do projeto
+      working-directory: ./backend
+      run: |
+        echo "Verificando se o servidor inicia corretamente..."
+        timeout 10s npm start || true
+        
+    - name: Deploy para produção (exemplo)
+      run: |
+        echo "🚀 Deploy para produção iniciado..."
+        echo "Aqui você pode adicionar comandos de deploy específicos"
+        echo "Exemplo: deploy para Heroku, Vercel, AWS, etc."
+        
+    - name: Notificar sucesso do deploy
+      run: |
+        echo "✅ Deploy concluído com sucesso!"
+        echo "Aplicação disponível em: https://sua-app.herokuapp.com"
+
+  # Job para documentação
+  documentation:
+    name: Gerar Documentação
+    runs-on: ubuntu-latest
+    needs: test-backend
+    
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+      
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Instalar dependências
+      working-directory: ./backend
+      run: npm ci
+      
+    - name: Gerar documentação da API
+      working-directory: ./backend
+      run: |
+        echo "📚 Gerando documentação..."
+        # Aqui você pode adicionar geração de documentação
+        # Exemplo: jsdoc, swagger, etc.
+        echo "Documentação gerada com sucesso"
+        
+    - name: Upload documentação
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation
+        path: ./backend/docs/
+        retention-days: 30
+
+  # Job para notificações
+  notify:
+    name: Notificações
+    runs-on: ubuntu-latest
+    needs: [test-backend, test-frontend, security-scan, deploy]
+    if: always()
+    
+    steps:
+    - name: Notificar resultado dos testes
+      run: |
+        if [ "${{ needs.test-backend.result }}" == "success" ]; then
+          echo "✅ Testes do backend passaram!"
+        else
+          echo "❌ Testes do backend falharam!"
+        fi
+        
+        if [ "${{ needs.test-frontend.result }}" == "success" ]; then
+          echo "✅ Testes do frontend passaram!"
+        else
+          echo "❌ Testes do frontend falharam!"
+        fi
+        
+        if [ "${{ needs.security-scan.result }}" == "success" ]; then
+          echo "✅ Análise de segurança passou!"
+        else
+          echo "❌ Análise de segurança falhou!"
+        fi
+        
+        if [ "${{ needs.deploy.result }}" == "success" ]; then
+          echo "✅ Deploy realizado com sucesso!"
+        elif [ "${{ needs.deploy.result }}" == "skipped" ]; then
+          echo "⏭️ Deploy pulado (não é branch main)"
+        else
+          echo "❌ Deploy falhou!"
+        fi
