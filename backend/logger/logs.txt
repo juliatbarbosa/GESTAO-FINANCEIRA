@@ -8122,3 +8122,11 @@
 [23/06/2025, 21:30] [WARNING] Log 2
 [23/06/2025, 21:30] [INFO] Teste de criação de arquivo
 [23/06/2025, 21:30] [ERROR] Log 3
+[30/06/2025, 20:27] [INFO] Teste de informação
+[30/06/2025, 20:27] [WARNING] Teste de aviso
+[30/06/2025, 20:27] [ERROR] Teste de erro
+[30/06/2025, 20:27] [INFO] Log 1
+[30/06/2025, 20:27] [INFO] Teste com timestamp
+[30/06/2025, 20:27] [ERROR] Log 3
+[30/06/2025, 20:27] [WARNING] Log 2
+[30/06/2025, 20:27] [INFO] Teste de criação de arquivo
