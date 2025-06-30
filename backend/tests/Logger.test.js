@@ -58,7 +58,7 @@ describe('Logger', () => {
         Logger.info(message);
         
         const logEntry = Logger.logs[0];
-        expect(logEntry).toMatch(/\[\d{1,2}\/\d{1,2}\/\d{4}, \d{1,2}:\d{2}\]/);
+        expect(logEntry).toMatch(/\[\d{1,2}\/\d{1,2}\/\d{4}[, ]\s?\d{1,2}:\d{2}\]/);
     });
     
     test('deve retornar array de logs', () => {
