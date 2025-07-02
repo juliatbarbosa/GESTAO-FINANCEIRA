@@ -26,10 +26,12 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "**/*.js",
-      "!**/node_modules/**",
-      "!**/coverage/**",
-      "!**/tests/**"
+      "service/**/*.js",
+      "routes/**/*.js",
+      "model/**/*.js",
+      "conexao/**/*.js",
+      "logger/**/*.js",
+      "server.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
