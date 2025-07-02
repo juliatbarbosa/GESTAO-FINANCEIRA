@@ -57,6 +57,7 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: juliatbarbosa/GESTAO-FINANCEIRA
         files: ./backend/coverage/lcov.info
+        fail_ci_if_error: true
         
     - name: Verificar qualidade do código
       working-directory: ./backend
