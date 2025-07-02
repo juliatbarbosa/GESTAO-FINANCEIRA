@@ -8306,3 +8306,13 @@
 [02/07/2025, 20:13] [WARNING] Conexão encerrada detectada, tentando reconectar...
 [02/07/2025, 20:13] [INFO] Conexão com o banco de dados estabelecida.
 [02/07/2025, 20:13] [INFO] Consulta realizada: 11 registros encontrados.
+[02/07/2025, 20:44] [INFO] Servidor rodando em http://localhost:3333
+[02/07/2025, 20:44] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 20:44] [INFO] Teste de informação
+[02/07/2025, 20:44] [WARNING] Teste de aviso
+[02/07/2025, 20:44] [ERROR] Teste de erro
+[02/07/2025, 20:44] [INFO] Log 1
+[02/07/2025, 20:44] [INFO] Teste com timestamp
+[02/07/2025, 20:44] [WARNING] Log 2
+[02/07/2025, 20:44] [ERROR] Log 3
+[02/07/2025, 20:44] [INFO] Teste de criação de arquivo
