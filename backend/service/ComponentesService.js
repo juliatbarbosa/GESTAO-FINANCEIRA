@@ -1,6 +1,6 @@
 const categoriaController = require("./CategoriaService.js");
 const Tipo = require("../model/Tipo.js");
-const logger = require("../logger/logger.js");
+const logger = require("../logger/Logger");
 const Response = require("../model/Response.js");
 
 exports.getCategoria = async (req, res, next) => {
