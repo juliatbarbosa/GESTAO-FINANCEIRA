@@ -1,4 +1,4 @@
-const logger = require("../logger/logger");
+const logger = require("../logger/Logger");
 const Categoria = require("../model/Categoria");
 const connect = require("../conexao/Conexao"); 
 const Response = require("../model/Response");
