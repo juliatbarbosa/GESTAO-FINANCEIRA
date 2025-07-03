@@ -1,9 +1,0 @@
-cd backend
-npm test
-
--        uses: actions/upload-artifact@v3
-+        uses: actions/upload-artifact@v4
-         with:
-           name: documentation
-           path: ./backend/docs/
-           retention-days: 30 
