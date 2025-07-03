@@ -1,0 +1,8 @@
+- name: Upload relatório de cobertura para Codecov
+  uses: codecov/codecov-action@v5
+  with:
+    token: ${{ secrets.CODECOV_TOKEN }}
+    slug: juliatbarbosa/GESTAO-FINANCEIRA
+    files: ./backend/coverage/lcov.info
+    fail_ci_if_error: true
+    verbose: true 
