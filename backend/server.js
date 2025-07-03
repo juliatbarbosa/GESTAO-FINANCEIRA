@@ -30,6 +30,10 @@ app.use((err, req, res, next) => {
 
 // Iniciar o servidor
 const PORT = 3333;
-app.listen(PORT, () => {
+if (require.main === module) {
+  app.listen(PORT, () => {
     logger.info(`Servidor rodando em http://localhost:${PORT}`);
-});
+  });
+}
+
+module.exports = app;

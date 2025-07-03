@@ -26,10 +26,8 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "service/**/*.js",
       "routes/**/*.js",
       "model/**/*.js",
-      "conexao/**/*.js",
       "logger/**/*.js",
       "server.js"
     ],

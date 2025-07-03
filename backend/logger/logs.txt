@@ -8329,3 +8329,81 @@
 [02/07/2025, 20:40] [INFO] Servidor rodando em http://localhost:3333
 [02/07/2025, 20:40] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
 >>>>>>> 2535cd122e43faefd04fc2bcdf40e4720e9a4b19
+[02/07/2025, 20:53] [INFO] Teste de informação
+[02/07/2025, 20:53] [WARNING] Teste de aviso
+[02/07/2025, 20:53] [ERROR] Teste de erro
+[02/07/2025, 20:53] [INFO] Teste com timestamp
+[02/07/2025, 20:53] [INFO] Log 1
+[02/07/2025, 20:53] [WARNING] Log 2
+[02/07/2025, 20:53] [INFO] Teste de criação de arquivo
+[02/07/2025, 20:53] [ERROR] Log 3
+[02/07/2025, 20:53] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 20:53] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 21:00] [INFO] Teste de informação
+[02/07/2025, 21:00] [WARNING] Teste de aviso
+[02/07/2025, 21:00] [ERROR] Teste de erro
+[02/07/2025, 21:00] [INFO] Log 1
+[02/07/2025, 21:00] [INFO] Teste com timestamp
+[02/07/2025, 21:00] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:00] [WARNING] Log 2
+[02/07/2025, 21:00] [ERROR] Log 3
+[02/07/2025, 21:00] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 21:00] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 21:00] [INFO] Teste de informação
+[02/07/2025, 21:00] [WARNING] Teste de aviso
+[02/07/2025, 21:00] [ERROR] Teste de erro
+[02/07/2025, 21:00] [INFO] Log 1
+[02/07/2025, 21:00] [INFO] Teste com timestamp
+[02/07/2025, 21:00] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:00] [ERROR] Log 3
+[02/07/2025, 21:00] [WARNING] Log 2
+[02/07/2025, 21:00] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 21:00] [INFO] Teste de informação
+[02/07/2025, 21:00] [ERROR] Teste de erro
+[02/07/2025, 21:00] [WARNING] Teste de aviso
+[02/07/2025, 21:00] [INFO] Log 1
+[02/07/2025, 21:00] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:00] [INFO] Teste com timestamp
+[02/07/2025, 21:00] [WARNING] Log 2
+[02/07/2025, 21:00] [ERROR] Log 3
+[02/07/2025, 21:00] [ERROR] Erro ao conectar no banco de dados: Encoding not recognized: 'cesu8' (searched as: 'cesu8')
+[02/07/2025, 21:01] [INFO] Teste de informação
+[02/07/2025, 21:01] [WARNING] Teste de aviso
+[02/07/2025, 21:01] [ERROR] Teste de erro
+[02/07/2025, 21:01] [INFO] Log 1
+[02/07/2025, 21:01] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:01] [INFO] Teste com timestamp
+[02/07/2025, 21:01] [WARNING] Log 2
+[02/07/2025, 21:01] [ERROR] Log 3
+[02/07/2025, 21:04] [INFO] Teste de informação
+[02/07/2025, 21:04] [WARNING] Teste de aviso
+[02/07/2025, 21:04] [INFO] Log 1
+[02/07/2025, 21:04] [INFO] Teste com timestamp
+[02/07/2025, 21:04] [ERROR] Teste de erro
+[02/07/2025, 21:04] [ERROR] Log 3
+[02/07/2025, 21:04] [WARNING] Log 2
+[02/07/2025, 21:04] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:05] [INFO] Teste de informação
+[02/07/2025, 21:05] [INFO] Teste com timestamp
+[02/07/2025, 21:05] [WARNING] Teste de aviso
+[02/07/2025, 21:05] [WARNING] Log 2
+[02/07/2025, 21:05] [ERROR] Teste de erro
+[02/07/2025, 21:05] [INFO] Log 1
+[02/07/2025, 21:05] [ERROR] Log 3
+[02/07/2025, 21:05] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:07] [WARNING] Teste de aviso
+[02/07/2025, 21:07] [INFO] Teste de informação
+[02/07/2025, 21:07] [ERROR] Teste de erro
+[02/07/2025, 21:07] [INFO] Teste com timestamp
+[02/07/2025, 21:07] [WARNING] Log 2
+[02/07/2025, 21:07] [INFO] Teste de criação de arquivo
+[02/07/2025, 21:07] [ERROR] Log 3
+[02/07/2025, 21:07] [INFO] Log 1
+[03/07/2025, 18:26] [INFO] Teste de informação
+[03/07/2025, 18:26] [WARNING] Teste de aviso
+[03/07/2025, 18:26] [INFO] Teste com timestamp
+[03/07/2025, 18:26] [ERROR] Teste de erro
+[03/07/2025, 18:26] [WARNING] Log 2
+[03/07/2025, 18:26] [INFO] Log 1
+[03/07/2025, 18:26] [INFO] Teste de criação de arquivo
+[03/07/2025, 18:26] [ERROR] Log 3

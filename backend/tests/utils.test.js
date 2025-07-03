@@ -1,3 +1,5 @@
+require('../logger/Logger');
+
 // Testes para funções utilitárias e validações
 
 describe('Funções Utilitárias', () => {
