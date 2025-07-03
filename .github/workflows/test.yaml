@@ -4,14 +4,14 @@ on:
   push:
     branches: [ main, develop ]
     paths:
-      - 'backend/**'
-      - 'frontend/**'
-      - '.github/workflows/**'
+      - 'backend/'
+      - 'frontend/'
+      - '.github/workflows/'
   pull_request:
     branches: [ main, develop ]
     paths:
-      - 'backend/**'
-      - 'frontend/**'
+      - 'backend/'
+      - 'frontend/'
 
 env:
   NODE_VERSION: '18'
@@ -50,14 +50,15 @@ jobs:
       working-directory: ./backend
       run: npm run test:coverage
       
-    - name: Upload coverage reports to Codecov
-      if: matrix.node-version == '18.x'
-      uses: codecov/codecov-action@v5
+    - name: Upload relatório de cobertura para Codecov
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        slug: juliatbarbosa/GESTAO-FINANCEIRA
-        files: ./backend/coverage/lcov.info
-        fail_ci_if_error: true
+        file: ./backend/coverage/lcov.info
+        flags: backend
+        name: backend-coverage
+        fail_ci_if_error: false
+        verbose: true
         
     - name: Verificar qualidade do código
       working-directory: ./backend
@@ -125,7 +126,7 @@ jobs:
         echo "Verificando dependências vulneráveis..."
         npm audit --json > audit-report.json || true
         if [ -s audit-report.json ]; then
-          echo "⚠️ Vulnerabilidades encontradas:"
+          echo "⚠ Vulnerabilidades encontradas:"
           cat audit-report.json | jq -r '.vulnerabilities | keys[]' || true
         else
           echo "✅ Nenhuma vulnerabilidade encontrada"
@@ -198,7 +199,7 @@ jobs:
         echo "Documentação gerada com sucesso"
         
     - name: Upload documentação
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         name: documentation
         path: ./backend/docs/
@@ -235,7 +236,7 @@ jobs:
         if [ "${{ needs.deploy.result }}" == "success" ]; then
           echo "✅ Deploy realizado com sucesso!"
         elif [ "${{ needs.deploy.result }}" == "skipped" ]; then
-          echo "⏭️ Deploy pulado (não é branch main)"
+          echo "⏭ Deploy pulado (não é branch main)"
         else
           echo "❌ Deploy falhou!"
-        fi
+        fi
