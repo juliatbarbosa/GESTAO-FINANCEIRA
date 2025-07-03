@@ -8427,3 +8427,11 @@
 [03/07/2025, 18:28] [WARNING] Conexão encerrada detectada, tentando reconectar...
 [03/07/2025, 18:28] [INFO] Conexão com o banco de dados estabelecida.
 [03/07/2025, 18:28] [INFO] Consulta realizada: 11 registros encontrados.
+[03/07/2025, 18:57] [INFO] Teste de informação
+[03/07/2025, 18:57] [WARNING] Teste de aviso
+[03/07/2025, 18:57] [INFO] Teste com timestamp
+[03/07/2025, 18:57] [ERROR] Teste de erro
+[03/07/2025, 18:57] [INFO] Log 1
+[03/07/2025, 18:57] [WARNING] Log 2
+[03/07/2025, 18:57] [ERROR] Log 3
+[03/07/2025, 18:57] [INFO] Teste de criação de arquivo
