@@ -21,16 +21,13 @@ jobs:
   test-backend:
     name: Testes Backend
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
-      - name: Configurar Node.js ${{ matrix.node-version }}
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '18'
           cache: 'npm'
           cache-dependency-path: backend/package-lock.json
       - name: Instalar dependências do backend
@@ -43,7 +40,6 @@ jobs:
         working-directory: ./backend
         run: npm run test:coverage
       - name: Upload relatório de cobertura para Codecov
-        if: matrix.node-version == '18.x'
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
