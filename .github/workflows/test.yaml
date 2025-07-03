@@ -1,7 +1,5 @@
 name: Testes e Deploy - Sistema de Gestão Financeira
 
-
-
 on:
   push:
     branches: [main, develop]
