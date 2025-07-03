@@ -1,0 +1,6 @@
+{
+  "collectCoverageFrom": [
+    "routes/**/*.js",
+    "logger/**/*.js"
+  ]
+} 
